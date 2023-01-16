@@ -1,7 +1,8 @@
-.test {
-  width: 500px;
-  height: 500px;
-  background-color: black;
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
