@@ -1,0 +1,27 @@
+{
+  "name": "css-frameworks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass styles/scss:styles/css",
+    "watch": "sass --watch styles/scss:styles/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrRuski/CSS-Frameworks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DrRuski/CSS-Frameworks/issues"
+  },
+  "homepage": "https://github.com/DrRuski/CSS-Frameworks#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  },
+  "devDependencies": {
+    "sass": "^1.57.1"
+  }
+}
