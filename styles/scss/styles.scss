@@ -1,9 +1,15 @@
 @import  "./components/variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/functions";
 
 *,
 *::after,
 *::before {
     box-sizing: inherit;
     margin: 0;
+}
+
+.active{
+    font-weight: 700;
+    color: $primary;
 }
