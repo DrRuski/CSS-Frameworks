@@ -14,29 +14,33 @@
 
 <body class="d-flex flex-column gap-3">
     <header>
-        <nav class="navbar navbar-expand-lg p-2">
+        <nav class="bg-dark navbar navbar-expand-lg p-3">
             <div class="container">
                 <div>
                     <a class="navbar-brand" href="index.html"><img class="img-fluid" src="assets/images/snorlax.png"
                             alt="" width="50px"></a>
                 </div>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+                    aria-expanded="false" aria-label="Toggle navigation"><span class="text-white"><i
+                            class="fa-solid fa-bars"></i></span></button>
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
-                    <ul class="navbar-nav gap-lg-5">
+                    <ul class="navbar-nav gap-2 gap-lg-4 align-items-end align-items-lg-center">
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link" aria-current="page"><span
+                            <a href="index.html" class="nav-link py-1" aria-current="page"><span
                                     class="active">Home</span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="profile.html" class="nav-link">Profile</a>
+                            <a href="profile.html" class="nav-link py-1 text-white">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a href="login.html" class="nav-link">Login</a>
+                            <button type="button" class="py-1 btn btn-sm btn-outline-light">Login</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="py-1 btn btn-sm btn-warning">Sign-up</button>
                         </li>
                     </ul>
                 </div>
@@ -53,12 +57,13 @@
             <div class="row align-items-end justify-content-between">
 
                 <div class="col">
-                    <button class="btn btn-primary btn-sm" type="button">New Post <i
-                            class="fa-solid fa-plus"></i></button>
+                    <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#createNewPost" aria-controls="createNewPost" aria-expanded="false"
+                        aria-label="Toggle navigation">New Post <i class="fa-solid fa-plus"></i></button>
                 </div>
 
 
-                <div class="col-3">
+                <div class="col-6 col-lg-3">
                     <form role="search">
                         <div class="form-floating">
                             <input class="form-control" id="search-input" type="search" placeholder="🔎 Search..."
@@ -70,7 +75,29 @@
 
             </div>
 
+            <div class="collapse" id="createNewPost">
+                <form action="submit" class="col-lg-4">
 
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="postTitle" placeholder="Post Title">
+                        <label for="postTitle">Post Title</label>
+                    </div>
+
+
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="postImg">
+                        <label class="input-group-text" for="postImg">Upload Image</label>
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea class="form-control" id="postContent" rows="5"
+                            placeholder="Write your post caption here..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-sm">Submit Post</button>
+
+                </form>
+            </div>
 
 
 
