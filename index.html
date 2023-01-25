@@ -77,25 +77,27 @@
             </div>
 
             <div class="collapse" id="createNewPost">
-                <form action="submit" class="col-lg-4">
+
+                <form class="col-lg-4">
 
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="postTitle" placeholder="Post Title">
+                        <input type="text" class="form-control" id="postTitle" placeholder="Post Title" required
+                            minlength="5">
                         <label for="postTitle">Post Title</label>
                     </div>
 
 
                     <div class="input-group mb-3">
-                        <input type="file" class="form-control" id="postImg">
+                        <input type="file" class="form-control" id="postImg" required>
                         <label class="input-group-text" for="postImg">Upload Image</label>
                     </div>
 
                     <div class="mb-3">
                         <textarea class="form-control" id="postContent" rows="5"
-                            placeholder="Write your post caption here..."></textarea>
+                            placeholder="Write your post caption here..." required minlength="10"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-sm">Submit Post</button>
+                    <button class="btn btn-primary btn-sm">Submit Post</button>
 
                 </form>
             </div>
