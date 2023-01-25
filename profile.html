@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="d-flex flex-column gap-3">
     <header>
         <nav class="bg-white navbar navbar-expand-lg p-3 nav-shadow">
             <div class="container">
@@ -34,7 +34,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="profile.html" class="nav-link py-1 text-dark"><span
-                                class="active">Profile</span></a>
+                                    class="active">Profile</span></a>
                         </li>
                         <li class="nav-item">
                             <a href="login.html" class="nav-link py-1 text-dark">Login</a>
@@ -48,8 +48,32 @@
         </nav>
     </header>
 
-    <main>
+    <main class="d-flex flex-column gap-3">
+        <section class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
 
+
+        <section class="container">
+            <div class="row">
+                <div class="d-flex flex-column gap-1 col-lg-4">
+                    <div class="d-flex justify-content-between">
+                        <img class="img-fluid rounded-4" width="150" src="assets/images/GeraltDarkest.png" alt="">
+                        <button class="btn align-self-start"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    </div>
+                    <h3 class="userName">John Doe</h3>
+                    <p>I am a highly skilled and motivated software developer with over 2 years of experience in the
+                        industry.</p>
+                </div>
+            </div>
+        </section>
 
 
 
@@ -62,9 +86,9 @@
         <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
                 <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                    <img class="img-fluid" width="24" height="24" src="assets/images/Mitt prosjekt(1).png" alt="">
+                    <img class="img-fluid" width="24" height="24" src="assets/images/lazySlothLogoDone.png" alt="">
                 </a>
-                <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
+                <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Lazy Sloth, Inc</span>
             </div>
 
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
