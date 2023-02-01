@@ -26,8 +26,13 @@
     font-weight: 600;
 }
 
+.text-height {
+    line-height: 30px;
+}
+
 .background-img {
-    background-image: url(/assets/images/backgroundImages/loginBGImage.jpg);
+    overflow: hidden;
+    background-image: url("/assets/images/backgroundImages/loginBGImage.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;

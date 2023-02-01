@@ -13,49 +13,20 @@
     <title>Lazy Sloth - Login</title>
 </head>
 
-<body class="background-img overflow-hidden">
+<body>
 
-    <header>
-        <nav class="bg-white navbar navbar-expand-lg p-2 py-lg-2 nav-shadow">
-            <div class="container">
-                <div>
-                    <a class="navbar-brand" href="index.html">
-                        <img class="img-fluid" src="assets/images/lazySlothLogoDoneStacked.png" alt="lazy sloth logo">
-                    </a>
-                </div>
+    <main class="vh-100 background-img">
 
-                <button class="navbar-toggler border-dark" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span class="text-dark"><i
-                            class="fa-solid fa-bars"></i></span></button>
-
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-
-                    <ul class="navbar-nav gap-2 gap-lg-4 align-items-end align-items-lg-center">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link py-1 text-dark" aria-current="page">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="login.html" class="nav-link py-1 text-dark"><span
-                                    class="active text-decoration-underline">Login</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-
-        <section class="vh-100 container d-flex flex-column justify-content-center">
+        <section class="container h-100 d-flex flex-column justify-content-center">
             <div class="row justify-content-center">
-                <div class="card col-lg-6">
-                    <div class="card-body d-flex flex-column gap-5">
-
-                        <div class="text-center">
-                            <h1>Welcome Back!</h1>
-                            <p>We're glad to have you with us again. Explore a new way of connecting with your
-                                besties across the world!</p>
+                <div class="card col-11 col-lg-4">
+                    <div class="card-body d-flex flex-column gap-3">
+                        <div class="d-flex flex-column align-items-center text-center gap-2">
+                            <img class="img-fluid" width="120px" src="assets/images/lazySlothLogoDoneStacked.png"
+                                alt="lazy sloth logo">
+                            <p class="p-0 text-height">We're glad to have you with us again. <br> How about you <span
+                                    class="active">Slotherin</span> and enjoy your
+                                stay.</p>
                         </div>
 
                         <form class="d-flex flex-column gap-4" method="get">
@@ -89,7 +60,7 @@
                             </div>
                         </form>
 
-                        <div class="d-flex gap-3 justify-content-center">
+                        <div class="d-flex gap-2 justify-content-center">
                             <p class="p-0 m-0">Don't have an account yet?</p>
                             <a href="#">Sign Up</a>
                         </div>
@@ -97,9 +68,6 @@
                     </div>
                 </div>
             </div>
-
-
-
         </section>
 
 
@@ -112,22 +80,15 @@
 
 
 
-    <footer class="p-3 bg-light fixed-bottom">
+    <footer class="p-2 fixed-bottom">
         <div class="container">
-            <div class="row d-flex">
-                <div class="d-flex col-8">
-                    <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <div class="row">
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <a href="#" class="p-0 m-0">
                         <img class="img-fluid" width="24" height="24" src="assets/images/lazySlothLogoDone.png" alt="">
                     </a>
-                    <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Lazy Sloth, Inc</span>
+                    <p class="text-white p-0 m-0">&copy; 2022 Lazy Sloth, Inc</p>
                 </div>
-
-                <ul class="nav list-unstyled d-flex col-4 justify-content-end">
-                    <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-square-facebook"></i></a>
-                    </li>
-                </ul>
             </div>
         </div>
     </footer>
