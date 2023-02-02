@@ -10779,12 +10779,12 @@ textarea.form-control-lg {
   font-weight: 900;
 }
 
-.subTitle {
-  font-weight: 600;
+.subText {
+  font-size: 12px;
 }
 
-.text-height {
-  line-height: 30px;
+.subTitle {
+  font-weight: 600;
 }
 
 .background-img {
