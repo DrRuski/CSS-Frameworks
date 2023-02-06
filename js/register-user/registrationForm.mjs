@@ -1,0 +1,1 @@
+export const userEmail = document.getElementById("userEmail")
