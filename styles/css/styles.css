@@ -10779,12 +10779,17 @@ textarea.form-control-lg {
   font-weight: 900;
 }
 
+.subText {
+  font-size: 12px;
+}
+
 .subTitle {
   font-weight: 600;
 }
 
 .background-img {
-  background-image: url(/assets/images/backgroundImages/loginBGImage.jpg);
+  overflow: hidden;
+  background-image: url("/assets/images/backgroundImages/loginBGImage.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
