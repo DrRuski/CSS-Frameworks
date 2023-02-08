@@ -1,8 +1,7 @@
 const apiToken = {
   headers: {
-    Authorization:
-      "",
+    Authorization: "",
   },
 };
 
-localStorage.setItem("accessToken", apiToken);
+
