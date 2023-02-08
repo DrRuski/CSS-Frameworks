@@ -1,11 +1,11 @@
-import { submitBtn, userInput } from "./registrationForm.mjs";
-
 import {
   api_Base_Url,
-  api_User_Registration_EndPoint,
+  api_User_Login_EndPoint,
 } from "../api/api_Url_Endpoints.mjs";
 
-async function registerUser() {
+import { userInput, submitBtn } from "./loginForm.mjs";
+
+async function userLogin() {
   try {
     const postData = {
       method: "POST",
@@ -16,11 +16,13 @@ async function registerUser() {
     };
 
     const response = await fetch(
-      `${api_Base_Url}${api_User_Registration_EndPoint}`,
+      `${api_Base_Url}${api_User_Login_EndPoint}`,
       postData
     );
     console.log(response);
     const json = await response.json();
+    const accessToken = json.accessToken;
+    localStorage.setItem("accessToken", accessToken);
     console.log(json);
     return json;
   } catch (error) {
@@ -28,4 +30,4 @@ async function registerUser() {
   }
 }
 
-submitBtn.addEventListener("click", registerUser);
+submitBtn.addEventListener("click", userLogin());
