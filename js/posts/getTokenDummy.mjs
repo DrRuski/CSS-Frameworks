@@ -17,3 +17,4 @@ export const userRegistrationInfo = {
     password: `${userPassword.value}`,
   },
 };
+// Test
