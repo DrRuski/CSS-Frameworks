@@ -1,18 +1,18 @@
+import { userInput, submitBtn } from "./loginForm.mjs";
+
 import {
   api_Base_Url,
   api_User_Login_EndPoint,
 } from "../api/api_Url_Endpoints.mjs";
 
-import { userInput, submitBtn } from "./loginForm.mjs";
-
-async function userLogin() {
+async function userLogin(userData) {
   try {
     const postData = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: userInput,
+      body: JSON.stringify(userData),
     };
 
     const response = await fetch(
@@ -30,4 +30,7 @@ async function userLogin() {
   }
 }
 
-submitBtn.addEventListener("click", userLogin());
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  userLogin(userInput);
+});

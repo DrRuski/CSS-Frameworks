@@ -1,12 +1,12 @@
-const userEmail = document.querySelector("#userEmail");
-const userName = document.querySelector("#userName");
-const userPassword = document.querySelector("#userPassword");
+const userEmail = document.getElementById("userEmail").value;
+const userName = document.getElementById("userName").value;
+const userPassword = document.getElementById("userPassword").value;
 export const submitBtn = document.getElementById("submitBtn");
 
-export const userInput = JSON.stringify({
-  name: `${userName.value}`,
-  email: `${userEmail.value}`,
-  password: `${userPassword.value}`,
-});
+export const userInputData = {
+  name: `${userName}`,
+  email: `${userEmail}`,
+  password: `${userPassword}`,
+};
 
-
+console.log(userPassword);

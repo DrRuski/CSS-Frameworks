@@ -10,7 +10,6 @@
     <link rel="icon" href="assets/images/lazySlothLogoDone.png" />
     <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="https://kit.fontawesome.com/e338dcafec.js" crossorigin="anonymous"></script>
-    <script src="js/register-user/register.mjs" type="module"></script>
     <script src="js/register-user/registerUser.mjs" type="module"></script>
     <title>Lazy Sloth - Register</title>
 </head>
@@ -52,8 +51,8 @@
                                 </div>
 
                                 <div class="form-floating mb-3">
-                                    <input type="text" id="userPassword" class="form-control"
-                                        placeholder="Password" required minlength="8">
+                                    <input type="password" id="userPassword" class="form-control" placeholder="Password"
+                                        required autocomplete="new-password">
                                     <label for="userPassword">Password</label>
                                 </div>
                             </div>
@@ -67,8 +66,8 @@
                             </div>
 
                             <div>
-                                <a href="index.html" id="submitBtn" type="submit" class="btn btn-primary col-12 mb-3">Agree and
-                                    Continue</a>
+                                <button id="submitBtn" type="submit" class="btn btn-primary col-12 mb-3">Agree and
+                                    Continue</button>
                             </div>
                         </form>
 
