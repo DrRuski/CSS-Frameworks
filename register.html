@@ -10,7 +10,6 @@
     <link rel="icon" href="assets/images/lazySlothLogoDone.png" />
     <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="https://kit.fontawesome.com/e338dcafec.js" crossorigin="anonymous"></script>
-    <script src="js/register-user/register.js" type="module"></script>
     <script src="js/register-user/registerUser.mjs" type="module"></script>
     <title>Lazy Sloth - Register</title>
 </head>
@@ -36,32 +35,28 @@
                                 alt="lazy sloth logo">
                         </div>
 
-                        <form class="d-flex flex-column gap-2" method="get">
+                        <form class="d-flex flex-column gap-2">
                             <div>
 
                                 <div class="form-floating mb-3">
                                     <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp"
                                         placeholder="Email" required>
                                     <label for="userEmail">Email</label>
-                                </div>
-
-
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="fullName" placeholder="Full Name"
-                                        required>
-                                    <label for="fullName">Full Name</label>
+                                    <div class="errorMessage"></div>
                                 </div>
 
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="userName" placeholder="Username"
-                                        required>
+                                        required pattern="^[A-Za-z][A-Za-z0-9_]{3,29}$">
                                     <label for="userName">Username</label>
+                                    <div class="errorMessage"></div>
                                 </div>
 
                                 <div class="form-floating mb-3">
-                                    <input type="password" id="userPassword" class="form-control"
-                                        aria-describedby="passwordHelpBlock" placeholder="Password" required>
+                                    <input type="password" id="userPassword" class="form-control" placeholder="Password"
+                                        required autocomplete="new-password">
                                     <label for="userPassword">Password</label>
+                                    <div class="errorMessage"></div>
                                 </div>
                             </div>
 
