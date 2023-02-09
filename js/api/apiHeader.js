@@ -1,8 +1,1 @@
-const apiToken = {
-    headers: {
-      Authorization: "",
-    },
-  };
-
-
 
