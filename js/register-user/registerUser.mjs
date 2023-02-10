@@ -24,6 +24,7 @@ async function registerUser(email, name, password) {
     const json = await response.json();
 
     if (!response.ok) {
+      console.log(json.errors);
     } else {
       buttonAcceptedStyle();
       setTimeout(() => {
