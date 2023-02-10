@@ -1,4 +1,5 @@
-import { submitBtn, buttonAcceptedStyle } from "./registrationForm.mjs";
+import { submitBtn } from "./registrationForm.mjs";
+import { buttonAcceptedStyle } from "./regButtonStyle.mjs";
 
 import {
   api_Base_Url,
@@ -39,10 +40,9 @@ async function registerUser(email, name, password) {
 submitBtn.addEventListener("click", (e) => {
   const form = document.getElementById("form");
   const formData = new FormData(form);
+  const email = formData.get("useremail");
+  const name = formData.get("username");
+  const password = formData.get("password");
 
-  const userEmail = formData.get("useremail");
-  const username = formData.get("username");
-  const userPassword = formData.get("password");
-
-  registerUser(userEmail, username, userPassword);
+  registerUser(email, name, password);
 });
