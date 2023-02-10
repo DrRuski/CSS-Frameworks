@@ -20,7 +20,9 @@ export async function fetchPosts(url) {
     // console.log(response);
     const postData = await response.json();
     console.log(postData);
-    createPost();
+    const data = postData.map(createPost);
+    document.querySelector(".write-post").append(...data);
+    // createPost(postData);
   } catch (error) {
     console.log(error);
   }
