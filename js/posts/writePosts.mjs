@@ -28,8 +28,12 @@
 // document.querySelector(".write-post").append(...postData);
 
 export async function createPost(postData) {
-  const container = document.querySelector(".write-post");
-  container.classList.add("div");
+  const postContainer = document.querySelector(".write-post");
+  const container = document.createElement("div");
+  postContainer.appendChild(container);
+  container.classList.add("col-12", "col-md-6", "col-lg-3");
+  // container.classList.add("div");
+  // container.createElement("div");
   container.innerHTML = `
   <div class="card h-100">
     <div class="card-header d-flex align-items-center justify-content-between">
@@ -41,11 +45,11 @@ export async function createPost(postData) {
     </div>
     <div class="card-body d-flex flex-column gap-2 p-0">
     <div>
-    <img class="img-fluid card-img" src="assets/postPictures/postTwo.png" alt="" />
+    <img class="img-fluid card-img " src="" alt="" />
     </div>
     <div class="px-3">
-      <a href="#" class="card-link text-decoration-none">#cozy</a>
-      <a href="#" class="card-link text-decoration-none">#relaxing</a>
+      <a href="#" class="card-link text-decoration-none"></a>
+      <a href="#" class="card-link text-decoration-none"></a>
     </div>
     <h3 class="ms-3 card-title">
     </h3>

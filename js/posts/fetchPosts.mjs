@@ -21,7 +21,7 @@ export async function fetchPosts(url) {
     const postData = await response.json();
     console.log(postData);
     const data = postData.map(createPost);
-    document.querySelector(".write-post").append(...data);
+    // document.querySelector(".write-post").append(...data);
     // createPost(postData);
   } catch (error) {
     console.log(error);
