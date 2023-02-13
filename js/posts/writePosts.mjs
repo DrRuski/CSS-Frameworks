@@ -3,8 +3,9 @@ export async function createPost(postData) {
   const container = document.createElement("div");
   postContainer.appendChild(container);
   container.classList.add("col-12", "col-md-6", "col-lg-3");
-  // container.classList.add("div");
-  // container.createElement("div");
+
+  // Needs to be refactored + add tags (if statement)
+
   container.innerHTML = `
   <div class="card h-100">
     <div class="card-header d-flex align-items-center justify-content-between">

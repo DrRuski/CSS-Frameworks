@@ -1,4 +1,4 @@
 import { fetchPosts } from "./fetchPosts.mjs";
-import { baseUrl } from "./fetchPosts.mjs";
+import { api_Base_Url, api_All_Posts_EndPoint } from "../api/api_Url_Endpoints.mjs";
 
-fetchPosts(baseUrl + "/api/v1/social/posts");
+fetchPosts(api_Base_Url + api_All_Posts_EndPoint);
