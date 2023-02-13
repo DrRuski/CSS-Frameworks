@@ -20,8 +20,7 @@ export async function createPost(postData) {
     <img class="img-fluid card-img " src="" alt="" />
     </div>
     <div class="px-3">
-      <a href="#" class="card-link text-decoration-none"></a>
-      <a href="#" class="card-link text-decoration-none"></a>
+      <a href="#" class="card-link text-decoration-none tags"></a>
     </div>
     <h3 class="ms-3 card-title">
     </h3>
@@ -42,10 +41,25 @@ export async function createPost(postData) {
     </div>
   </div>
   `;
+  // if (postData.tags.length > 0 && postData.tags[0] != "" && postData.tags[0] != "string") {
+  //   console.log(postData.tags);
+  //   container.querySelector(".tags").innerText = "#" + postData.tags;
+  // }
+  postData.tags = postData.tags.filter((tag) => {
+    switch (tag) {
+      case "":
+        return false;
+      default:
+        postData.tags.forEach((element) => {
+          console.log("Logging test element:", element);
+          container.querySelector(".tags").innerText = `#${element}`;
+        });
+    }
+  });
+  // Re-write / refactor
   container.querySelector(".card-author-img").src = "";
-  container.querySelector(".card-author").innerText = "Author";
+  container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
-  console.log("Testing function");
 }
