@@ -1,18 +1,19 @@
-import { submitBtn, errorMessageContainer } from "./registrationForm.mjs";
+import { submitBtn } from "./registrationForm.mjs";
+import { buttonAcceptedStyle } from "./regButtonStyle.mjs";
 
 import {
   api_Base_Url,
   api_User_Registration_EndPoint,
 } from "../api/api_Url_Endpoints.mjs";
 
-async function registerUser(email, username, password) {
+async function registerUser(email, name, password) {
   try {
     const postData = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, username, password }),
+      body: JSON.stringify({ email, name, password }),
     };
 
     const response = await fetch(
@@ -21,19 +22,14 @@ async function registerUser(email, username, password) {
     );
 
     const json = await response.json();
-    const jsonErrorArray = json.errors;
-
-    const errorMessage = jsonErrorArray.map((e) => {
-      return `${e.message}`;
-    });
-
-    console.log(errorMessage);
 
     if (!response.ok) {
+      console.log(json.errors);
     } else {
-      // setTimeout(() => {
-      //   window.location.pathname = "index.html";
-      // }, 2000);
+      buttonAcceptedStyle();
+      setTimeout(() => {
+        window.location.pathname = "index.html";
+      }, 2000);
     }
 
     return json;
@@ -43,10 +39,11 @@ async function registerUser(email, username, password) {
 }
 
 submitBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const userEmail = document.getElementById("userEmail").value;
-  const userName = document.getElementById("userName").value;
-  const userPassword = document.getElementById("userPassword").value;
+  const form = document.getElementById("form");
+  const formData = new FormData(form);
+  const email = formData.get("useremail");
+  const name = formData.get("username");
+  const password = formData.get("password");
 
-  registerUser(userEmail, userName, userPassword);
+  registerUser(email, name, password);
 });
