@@ -40,15 +40,17 @@
                             <div>
                                 <div class="form-floating mb-3">
                                     <input name="useremail" type="email" class="form-control" id="userEmail"
-                                        placeholder="Email" required
-                                        pattern="[\w\.%+-]+@(stud\.){0,1}noroff\.no">
+                                        placeholder="Email" required pattern="[\w\.%+-]+@(stud\.){0,1}noroff\.no"
+                                        title="Only noroff.no emails are allowed to register">
                                     <label for="userEmail">Email</label>
-                                    <p id="regInfoText" class="text-black opacity-50 subText ms-2">Only noroff.no emails are allowed to register</p>
+                                    <p id="regInfoText" class="text-black opacity-50 subText ms-2">Only noroff.no emails
+                                        are allowed to register</p>
                                 </div>
 
                                 <div class="form-floating mb-3">
                                     <input name="username" type="text" class="form-control" id="userName"
-                                        placeholder="Username" required pattern="^[A-Za-z][A-Za-z0-9_]{3,29}$">
+                                        placeholder="Username" required pattern="^[A-Za-z][A-Za-z0-9_]{3,29}$"
+                                        title="Name can only use a-Z, 0-9, and _">
                                     <label for="userName">Username</label>
                                     <p class="text-black opacity-50 subText ms-2">Name can only use a-Z, 0-9, and _</p>
                                 </div>
@@ -56,9 +58,10 @@
                                 <div class="form-floating mb-3">
                                     <input name="password" type="password" id="userPassword" class="form-control"
                                         placeholder="Password" required autocomplete="new-password"
-                                        pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm">
+                                        title="Password must be at least 8 characters">
                                     <label for="userPassword">Password</label>
-                                    <p id="regInfoText" class="text-black opacity-50 subText ms-2">Password must be at least 8 characters</p>
+                                    <p id="regInfoText" class="text-black opacity-50 subText ms-2">Password must be at
+                                        least 8 characters</p>
                                 </div>
                             </div>
 
