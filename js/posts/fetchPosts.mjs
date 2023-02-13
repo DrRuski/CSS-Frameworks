@@ -1,10 +1,5 @@
 import { createPost } from "./writePosts.mjs";
 
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzA3LCJuYW1lIjoiZGFkeSIsImVtYWlsIjoiRGFuRHlyNzcxNTdAc3R1ZC5ub3JvZmYubm8iLCJhdmF0YXIiOm51bGwsImJhbm5lciI6bnVsbCwiaWF0IjoxNjc1ODU1OTA4fQ.nAvo_mYNHr-_E9h9FndDDyw8mdvwL2yxOBpXVWH4R94";
-localStorage.setItem("accessToken", token);
-export const baseUrl = "https://nf-api.onrender.com";
-
 // Get top 100 posts no filter
 export async function fetchPosts(url) {
   try {
@@ -17,12 +12,9 @@ export async function fetchPosts(url) {
       },
     };
     const response = await fetch(url, getData);
-    // console.log(response);
     const postData = await response.json();
     console.log(postData);
     const data = postData.map(createPost);
-    // document.querySelector(".write-post").append(...data);
-    // createPost(postData);
   } catch (error) {
     console.log(error);
   }
