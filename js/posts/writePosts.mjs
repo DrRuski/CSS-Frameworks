@@ -1,4 +1,4 @@
-export async function createPost(postData) {
+export function createPost(postData) {
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
   postContainer.appendChild(container);
@@ -7,7 +7,7 @@ export async function createPost(postData) {
   <div class="card h-100">
     <div class="card-header d-flex align-items-center justify-content-between">
     <div class="d-flex gap-2 align-items-center">
-      <img class="img-fluid card-author-img" width="40px" src="assets/images/postUserIcon.png" alt="" />
+      <img class="img-fluid card-author-img" src="assets/images/postUserIcon.png" alt="" />
       <h6 class="m-0 card-author"></h6>
     </div>
     <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
@@ -48,7 +48,7 @@ export async function createPost(postData) {
         });
     }
   });
-  container.querySelector(".card-author-img").src = "";
+  container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
   container.querySelector(".card-title").innerText = postData.title;
