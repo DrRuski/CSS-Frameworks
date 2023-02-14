@@ -3,9 +3,6 @@ export async function createPost(postData) {
   const container = document.createElement("div");
   postContainer.appendChild(container);
   container.classList.add("col-12", "col-md-6", "col-lg-3");
-
-  // Needs to be refactored + add tags (if statement)
-
   container.innerHTML = `
   <div class="card h-100">
     <div class="card-header d-flex align-items-center justify-content-between">
@@ -41,22 +38,16 @@ export async function createPost(postData) {
     </div>
   </div>
   `;
-  // if (postData.tags.length > 0 && postData.tags[0] != "" && postData.tags[0] != "string") {
-  //   console.log(postData.tags);
-  //   container.querySelector(".tags").innerText = "#" + postData.tags;
-  // }
   postData.tags = postData.tags.filter((tag) => {
     switch (tag) {
       case "":
         return false;
       default:
         postData.tags.forEach((element) => {
-          console.log("Logging test element:", element);
           container.querySelector(".tags").innerText = `#${element}`;
         });
     }
   });
-  // Re-write / refactor
   container.querySelector(".card-author-img").src = "";
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
