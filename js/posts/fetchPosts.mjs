@@ -13,8 +13,7 @@ export async function fetchPosts(url) {
     };
     const response = await fetch(url, getData);
     const postData = await response.json();
-    console.log(postData);
-    const data = postData.map(createPost);
+    postData.map(createPost);
   } catch (error) {
     console.log(error);
   }

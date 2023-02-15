@@ -1,16 +1,13 @@
-export async function createPost(postData) {
+export function createPost(postData) {
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
   postContainer.appendChild(container);
   container.classList.add("col-12", "col-md-6", "col-lg-3");
-
-  // Needs to be refactored + add tags (if statement)
-
   container.innerHTML = `
   <div class="card h-100">
     <div class="card-header d-flex align-items-center justify-content-between">
     <div class="d-flex gap-2 align-items-center">
-      <img class="img-fluid card-author-img" width="40px" src="assets/images/postUserIcon.png" alt="" />
+      <img class="img-fluid card-author-img" src="assets/images/postUserIcon.png" alt="" />
       <h6 class="m-0 card-author"></h6>
     </div>
     <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
@@ -20,8 +17,7 @@ export async function createPost(postData) {
     <img class="img-fluid card-img " src="" alt="" />
     </div>
     <div class="px-3">
-      <a href="#" class="card-link text-decoration-none"></a>
-      <a href="#" class="card-link text-decoration-none"></a>
+      <a href="#" class="card-link text-decoration-none tags"></a>
     </div>
     <h3 class="ms-3 card-title">
     </h3>
@@ -42,10 +38,19 @@ export async function createPost(postData) {
     </div>
   </div>
   `;
-  container.querySelector(".card-author-img").src = "";
-  container.querySelector(".card-author").innerText = "Author";
+  postData.tags = postData.tags.filter((tag) => {
+    switch (tag) {
+      case "":
+        return false;
+      default:
+        postData.tags.forEach((element) => {
+          container.querySelector(".tags").innerText = `#${element}`;
+        });
+    }
+  });
+  container.querySelector(".card-author-img").src = postData.author.avatar;
+  container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
-  console.log("Testing function");
 }

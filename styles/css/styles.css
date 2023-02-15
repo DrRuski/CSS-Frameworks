@@ -10799,4 +10799,13 @@ textarea.form-control-lg {
   color: #fff;
 }
 
+.card-author-img {
+  max-width: 40px;
+  height: 40px;
+}
+
+.card-img {
+  border-radius: 0;
+}
+
 /*# sourceMappingURL=styles.css.map */
