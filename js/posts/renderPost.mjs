@@ -1,10 +1,20 @@
-export function renderPost(postData) {
+export function renderPost(postData, type = "single") {
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
+  if (type === "single") {
+    containerSpecificPost();
+  } else {
+    containerAllPosts();
+  }
+  function containerAllPosts() {
+    return container.classList.add("col-12", "col-md-6", "col-lg-3");
+  }
+  function containerSpecificPost() {
+    return container.classList.add("col-10");
+  }
   postContainer.appendChild(container);
-  container.classList.add("col-12", "col-md-6", "col-lg-3");
   container.innerHTML = `
-  <div class="card h-100">
+  <div class="card h-100" data-id="">
     <div class="card-header d-flex align-items-center justify-content-between">
     <div class="d-flex gap-2 align-items-center">
       <img class="img-fluid card-author-img" src="assets/images/postUserIcon.png" alt="" />
@@ -48,6 +58,7 @@ export function renderPost(postData) {
         });
     }
   });
+  container.dataset.id = `${postData.id}`;
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
