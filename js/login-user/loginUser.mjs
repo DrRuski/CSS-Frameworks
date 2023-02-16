@@ -24,7 +24,15 @@ async function loginUser(email, password) {
     const json = await response.json();
 
     const accessToken = json.accessToken;
+    const userProfile = {
+      name: json.name,
+      email: json.email,
+      avatar: json.avatar,
+      banner: json.banner,
+    };
+
     localStorage.setItem("accessToken", accessToken);
+    localStorage.setItem("userProfile", JSON.stringify(userProfile));
 
     if (!response.ok) {
       console.log(json.errors);

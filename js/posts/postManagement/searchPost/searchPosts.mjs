@@ -1,32 +1,35 @@
-import { createPost } from "../../writePosts.mjs";
+import { getPosts } from "../../getPosts.mjs";
+import { getPostTitle } from "./getPostTitle.mjs";
+import { renderPost } from "../../renderPost.mjs";
+
 const userInput = document.getElementById("search-input");
 
 //
-export function searchPosts(postData) {
-  //
-  userInput.addEventListener("search", (inputText) => {
-    inputText.preventDefault();
-    const userInputText = JSON.stringify(inputText.value.toLowerCase());
-    //
-  });
+//
+//
 
-  //
-  newPostDataArray(postData);
-  //
 
-  //
-  //   newPostDataArray.find((post) => {
-  //     if (postTitle === inputText) {
-  //     }
-  //   });
-  //
 
-  //
-}
 
-function newPostDataArray(postData) {
-  postData.map((e) => {
-    const postTitle = JSON.stringify(e.title.toLowerCase());
-    const postAuthor = JSON.stringify(e.author.name.toLowerCase());
-  });
-}
+
+
+
+
+
+// MAIN FUNCTION TO RULE THEM ALL //
+
+userInput.addEventListener("click", (e) => {
+  const form = document.getElementById("searchForm");
+  const formData = new FormData(form);
+  const userSearch = formData.get("search");
+  // const userSearch = formData.get(JSON.stringify(e.value.toLowerCase()));
+});
+
+
+
+
+
+ 
+
+
+
