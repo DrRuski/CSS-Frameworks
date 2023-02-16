@@ -1,14 +1,32 @@
-// const searchInput = document.getElementById("search-input");
+import { createPost } from "../../writePosts.mjs";
+const userInput = document.getElementById("search-input");
 
-// export function searchPosts(postsArray) {
-//   searchInput.addEventListener("search", (userInput) => {
-//     //
-//     const testing = postsArray.find((e) => {
-//       if (e.title.toLowerCase() === userInput.value.toLowerCase()) {
-//         return true;
-//       }
-//       console.log(testing)
-//     });
-//     //
-//   });
-// }
+//
+export function searchPosts(postData) {
+  //
+  userInput.addEventListener("search", (inputText) => {
+    inputText.preventDefault();
+    const userInputText = JSON.stringify(inputText.value.toLowerCase());
+    //
+  });
+
+  //
+  newPostDataArray(postData);
+  //
+
+  //
+  //   newPostDataArray.find((post) => {
+  //     if (postTitle === inputText) {
+  //     }
+  //   });
+  //
+
+  //
+}
+
+function newPostDataArray(postData) {
+  postData.map((e) => {
+    const postTitle = JSON.stringify(e.title.toLowerCase());
+    const postAuthor = JSON.stringify(e.author.name.toLowerCase());
+  });
+}
