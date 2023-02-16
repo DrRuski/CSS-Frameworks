@@ -1,9 +1,6 @@
-import { createPost } from "./writePosts.mjs";
-import { searchPosts } from "./postManagement/searchPost/searchPosts.mjs";
+import { renderPosts } from "./renderPosts.mjs";
 
-
-// Get top 100 posts no filter
-export async function fetchPosts(url) {
+export async function getPosts(url) {
   try {
     const accessToken = localStorage.getItem("accessToken");
     const getData = {
@@ -15,17 +12,8 @@ export async function fetchPosts(url) {
     };
     const response = await fetch(url, getData);
     const postData = await response.json();
-    //
-    postData.map(createPost);
-    //
-    searchPosts(postData);
-    //
-    
-  
-    
+    return postData;
   } catch (error) {
     console.log(error);
   }
 }
-
-
