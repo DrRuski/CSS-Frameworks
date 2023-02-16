@@ -12,7 +12,7 @@ export async function getPosts(url) {
     };
     const response = await fetch(url, getData);
     const postData = await response.json();
-    renderPosts(postData);
+    return postData;
   } catch (error) {
     console.log(error);
   }
