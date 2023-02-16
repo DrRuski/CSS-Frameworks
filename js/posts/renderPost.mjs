@@ -1,4 +1,4 @@
-export function createPost(postData) {
+export function renderPost(postData) {
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
   postContainer.appendChild(container);
