@@ -1,5 +1,3 @@
-import { renderPosts } from "./renderPosts.mjs";
-
 export async function getPosts(url) {
   try {
     const accessToken = localStorage.getItem("accessToken");

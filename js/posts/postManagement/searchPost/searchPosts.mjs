@@ -1,12 +1,7 @@
-import { getPosts } from "../../getPosts.mjs";
-import {
-  api_Base_Url,
-  api_All_Posts_EndPoint,
-} from "../../../api/api_Url_Endpoints.mjs";
-const url = `${api_Base_Url}${api_All_Posts_EndPoint}`;
+import { renderPosts } from "../../renderPosts.mjs";
 
-export async function searchTerm() {
-  const postsArray = await getPosts(url);
+export async function searchPosts(postData, url) {
+  const postsArray = await postData(url);
   const searchForm = document.querySelector("form#searchForm");
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -16,10 +11,12 @@ export async function searchTerm() {
     const term = searchTerm.toLowerCase();
     //
     const filteredPosts = postsArray.filter((post) => {
-      //
       const postTitle = post.title.toLowerCase();
-      return postTitle.includes(term);
+      const author = post.author.name.toLowerCase();
+      return postTitle.includes(term) || author.includes(term);
     });
-    console.log(filteredPosts);
+    const postContainer = document.querySelector(".write-post");
+    postContainer.innerHTML = "";
+    renderPosts(filteredPosts);
   });
 }
