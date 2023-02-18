@@ -17,6 +17,8 @@ export async function searchPosts(postData, url) {
     });
     const postContainer = document.querySelector(".write-post");
     postContainer.innerHTML = "";
-    renderPosts(filteredPosts);
+    if (filteredPosts.length) {
+      renderPosts(filteredPosts);
+    }
   });
 }
