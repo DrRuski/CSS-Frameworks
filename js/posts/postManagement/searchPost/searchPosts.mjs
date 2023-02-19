@@ -1,4 +1,5 @@
 import { renderPosts } from "../../renderPosts.mjs";
+import { getSearchTerms } from "./getTerms.mjs";
 import { postNotFoundError } from "./postNotFound.mjs";
 
 export async function searchPosts(postData, url) {
@@ -9,17 +10,10 @@ export async function searchPosts(postData, url) {
     const form = e.target;
     const searchTerm = form.search.value;
     const term = searchTerm.toLowerCase();
-    //
-    const filteredPosts = postsArray.filter((post) => {
-      const postTitle = post.title.toLowerCase();
-      const author = post.author.name.toLowerCase();
-      return postTitle.includes(term) || author.includes(term);
-    });
-    //
     const postContainer = document.querySelector(".write-post");
     postContainer.innerHTML = "";
-    if (filteredPosts.length) {
-      renderPosts(filteredPosts);
+    if (getSearchTerms(postsArray, term).length) {
+      renderPosts(getSearchTerms(postsArray, term));
     } else {
       postNotFoundError(postContainer);
     }
