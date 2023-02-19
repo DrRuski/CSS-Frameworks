@@ -1,7 +1,7 @@
-function clearHTML() {
-  while (this.hasChildNodes()) {
-    this.removeChild(this.lastChild);
-  }
-}
+// function clearHTML() {
+//   while (this.hasChildNodes()) {
+//     this.removeChild(this.lastChild);
+//   }
+// }
 
-HTMLElement.prototype.clear = clearHTML;
+// HTMLElement.prototype.clear = clearHTML;
