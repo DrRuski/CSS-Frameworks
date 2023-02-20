@@ -12,7 +12,8 @@ const newPostForm = document.querySelector("form#newPostForm");
 
 setupPage(apiUrl);
 searchPosts(getPosts, apiUrl);
-newPostForm.addEventListener(
-  "submit",
-  publishPost(`${api_Base_Url}${api_Create_New_Post_EndPoint}`)
-);
+
+newPostForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  publishPost(`${api_Base_Url}${api_Create_New_Post_EndPoint}`);
+});
