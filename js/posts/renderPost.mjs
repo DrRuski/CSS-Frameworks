@@ -1,19 +1,9 @@
-export function renderPost(postData, type = "single") {
+export function renderPost(postData) {
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
   container.setAttribute("id", postData.id);
-  if (type === "single") {
-    containerSpecificPost();
-  } else {
-    containerAllPosts();
-  }
-  function containerAllPosts() {
-    container.classList.add("col-12", "col-md-6", "col-lg-3");
-    container.dataset.id = postData.id;
-  }
-  function containerSpecificPost() {
-    container.classList.add("col-10");
-  }
+  container.classList.add("col-12", "col-md-6", "col-lg-3");
+  container.dataset.id = postData.id;
   postContainer.appendChild(container);
   container.innerHTML = `  <div class="card h-100">
   <div class="card-header d-flex align-items-center justify-content-between">
@@ -47,9 +37,7 @@ export function renderPost(postData, type = "single") {
   </ul>
   </div>
   <div class="d-flex justify-content-center mb-3">
-  <div class="view-post-button">
   <a href="specificpost.html?id=${postData.id}" class="btn btn-primary">View Post</a>
-  </div>
   </div>
   </div>`;
   postData.tags = postData.tags.filter((tag) => {
@@ -62,9 +50,6 @@ export function renderPost(postData, type = "single") {
         });
     }
   });
-  if (type === "single") {
-    container.querySelector(".view-post-button").style.display = "none";
-  }
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;

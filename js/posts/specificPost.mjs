@@ -6,5 +6,4 @@ const id = 3019;
 // console.log(`${api_Base_Url}${api_Single_Post_EndPoint}/${id}?_author=true`);
 getParam();
 // setupPage(newUrl);
-
 // console.log(`${api_Base_Url}${api_Single_Post_EndPoint}/${id}?_author=true`);
