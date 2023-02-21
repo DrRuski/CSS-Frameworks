@@ -13,7 +13,8 @@ const newPostForm = document.querySelector("form#newPostForm");
 setupPage(apiUrl);
 searchPosts(getPosts, apiUrl);
 
-newPostForm.addEventListener("submit", (e) => {
+newPostForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  publishPost(`${api_Base_Url}${api_Create_New_Post_EndPoint}`);
+  await publishPost(`${api_Base_Url}${api_Create_New_Post_EndPoint}`);
+  location.reload();
 });

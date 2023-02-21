@@ -5,6 +5,6 @@ export function userPostInput() {
     title: newFormData.get("title"), // Required
     body: newFormData.get("postBody"), // Optional
     tags: [newFormData.get("hashTag")], // Optional
-    // media: newFormData.get("image"), // Optional
+    media: newFormData.get("media"), // Optional
   });
 }
