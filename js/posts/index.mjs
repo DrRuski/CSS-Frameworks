@@ -12,7 +12,6 @@ import { deletePost } from "./postManagement/deletePost/index.mjs";
 const apiUrl = `${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`;
 const newPostForm = document.querySelector("form#newPostForm");
 
-
 setupPage(apiUrl);
 searchPosts(getPosts, apiUrl);
 
@@ -22,3 +21,10 @@ newPostForm.addEventListener("submit", async (e) => {
   location.reload();
 });
 
+export function deleteUserPost(button, postID) {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    deletePost(`${api_Base_Url}${api_Delete_Post_EndPoint}${postID}`);
+    location.reload();
+  });
+}

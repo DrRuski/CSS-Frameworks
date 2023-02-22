@@ -16,7 +16,7 @@ export function renderPost(postData) {
       <ul class="dropdown-menu">
         <li><button class="dropdown-item mb-1 py-2">Update Post</button></li>
         <li><button class="dropdown-item text-warning mt-1 py-2 d-flex justify-content-between align-items-center"><span>Report Post</span><i class="fa-solid fa-triangle-exclamation"></i></i></button></li>
-        <li><button class="deletePostBtn dropdown-item bg-danger text-white mt-1 py-2 d-flex justify-content-between align-items-center"><span>Delete Post</span><i class="fa-regular fa-trash-can"></i></button></li>
+        <li><button id="deletePostBtn" class="dropdown-item bg-danger text-white mt-1 py-2 d-flex justify-content-between align-items-center"><span>Delete Post</span><i class="fa-regular fa-trash-can"></i></button></li>
       </ul>
   </div>
   <div class="card-body d-flex flex-column gap-2 p-0">
@@ -47,7 +47,7 @@ export function renderPost(postData) {
   </div>
   </div>`;
   //
-  getDeleteBtn();
+  getDeleteBtn(postData);
   //
   postData.tags = postData.tags.filter((tag) => {
     switch (tag) {
