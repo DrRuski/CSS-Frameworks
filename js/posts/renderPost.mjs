@@ -1,3 +1,4 @@
+import { getDeleteBtn } from "./postManagement/deletePost/getDeleteBtn.mjs";
 export function renderPost(postData) {
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
@@ -45,6 +46,9 @@ export function renderPost(postData) {
   <a href="specificpost.html?id=${postData.id}" class="btn btn-primary">View Post</a>
   </div>
   </div>`;
+  //
+  getDeleteBtn();
+  //
   postData.tags = postData.tags.filter((tag) => {
     switch (tag) {
       case "":
@@ -55,6 +59,7 @@ export function renderPost(postData) {
         });
     }
   });
+
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
