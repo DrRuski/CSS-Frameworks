@@ -1,4 +1,5 @@
-import { getDeleteBtn } from "./postManagement/deletePost/getDeleteBtn.mjs";
+import { deleteUserPost } from "./index.mjs";
+
 export function renderPost(postData) {
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
@@ -47,7 +48,7 @@ export function renderPost(postData) {
   </div>
   </div>`;
   //
-  getDeleteBtn(postData);
+  deleteUserPost(container);
   //
   postData.tags = postData.tags.filter((tag) => {
     switch (tag) {
@@ -58,6 +59,7 @@ export function renderPost(postData) {
           container.querySelector(".tags").innerText = `#${element}`;
         });
     }
+    
   });
 
   container.querySelector(".card-author-img").src = postData.author.avatar;
@@ -66,3 +68,4 @@ export function renderPost(postData) {
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
 }
+
