@@ -11,7 +11,12 @@ export function renderPost(postData) {
     <img class="img-fluid card-author-img" src="assets/images/postUserIcon.png" alt="" />
     <h6 class="m-0 card-author"></h6>
   </div>
-  <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+      <ul class="dropdown-menu">
+        <li><button class="dropdown-item mb-1 py-2">Update Post</button></li>
+        <li><button class="dropdown-item text-warning mt-1 py-2 d-flex justify-content-between align-items-center"><span>Report Post</span><i class="fa-solid fa-triangle-exclamation"></i></i></button></li>
+        <li><button class="deletePostBtn dropdown-item bg-danger text-white mt-1 py-2 d-flex justify-content-between align-items-center"><span>Delete Post</span><i class="fa-regular fa-trash-can"></i></button></li>
+      </ul>
   </div>
   <div class="card-body d-flex flex-column gap-2 p-0">
   <div>
