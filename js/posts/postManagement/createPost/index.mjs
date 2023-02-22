@@ -6,7 +6,8 @@ export async function publishPost(url) {
     const accessToken = localStorage.getItem("accessToken");
     const response = await fetch(url, createNewPostSetup(accessToken));
     console.log(response);
-    return await response.json();
+    const postData = await response.json();
+    return postData;
   } catch (error) {
     console.log(error);
   }
