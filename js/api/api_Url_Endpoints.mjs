@@ -23,3 +23,7 @@ export const api_React_To_Post_EndPoint = "/api/v1/social/posts/react/<symbol>";
 /* DELETE */
 export const api_Delete_Post_EndPoint = "/api/v1/social/posts/";
 // Example with id "/api/v1/social/posts/<id>";
+
+// PROFILE
+export const api_Profile = `/api/v1/social/profiles/`;
+// Example https://api.noroff.dev/api/v1/social/profiles/<name>
