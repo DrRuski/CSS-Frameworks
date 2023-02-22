@@ -48,7 +48,7 @@ export function renderPost(postData) {
   </div>
   </div>`;
   //
-  deleteUserPost(container);
+  deleteUserPost(container, postData);
   //
   postData.tags = postData.tags.filter((tag) => {
     switch (tag) {
@@ -59,7 +59,6 @@ export function renderPost(postData) {
           container.querySelector(".tags").innerText = `#${element}`;
         });
     }
-    
   });
 
   container.querySelector(".card-author-img").src = postData.author.avatar;
@@ -68,4 +67,3 @@ export function renderPost(postData) {
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
 }
-

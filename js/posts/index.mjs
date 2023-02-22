@@ -21,12 +21,14 @@ newPostForm.addEventListener("submit", async (e) => {
   location.reload();
 });
 //
-export function deleteUserPost(container) {
-  const deletePostBtn = document.querySelector("button#deletePostBtn");
-  const postID = container.id;
-  deletePostBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    deletePost(`${api_Base_Url}${api_Delete_Post_EndPoint}${postID}`);
-    location.reload();
-  });
+export function deleteUserPost(container, postData) {
+  container
+    .querySelector("button#deletePostBtn")
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      deletePost(`${api_Base_Url}${api_Delete_Post_EndPoint}${postData.id}`);
+      setTimeout(() => {
+        location.reload();
+      }, 500);
+    });
 }
