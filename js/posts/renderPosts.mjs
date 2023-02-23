@@ -4,6 +4,7 @@ export function renderPosts(postData) {
   if (Array.isArray(postData)) {
     const type = postData.length > 1;
     postData.forEach((post) => renderPost(post, type));
+    // remove "type" ??
   } else {
     renderSpecificPost(postData);
   }

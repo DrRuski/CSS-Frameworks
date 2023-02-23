@@ -17,8 +17,12 @@ export async function displayProfile(url) {
   }
 }
 function editProfile(displayProfile) {
-  const profileImage = document.querySelector("#profile-image");
-  const profileName = document.querySelector(".userName");
-  profileImage.src = displayProfile.avatar;
+  const profileAvatar = document.querySelector(".profile-avatar");
+  const profileBanner = document.querySelector(".profile-banner");
+  const profileName = document.querySelector(".user-name");
+  profileAvatar.src = displayProfile.avatar;
+  profileAvatar.alt = `avatar picture for user: ${displayProfile.name}`;
+  profileBanner.src = displayProfile.banner;
+  profileBanner.alt = `banner picture for user: ${displayProfile.name}`;
   profileName.innerHTML = displayProfile.name;
 }
