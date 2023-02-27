@@ -13,15 +13,18 @@ import { deletePost } from "./postManagement/deletePost/index.mjs";
 import { updatePost } from "./postManagement/updatePost/index.mjs";
 const apiUrl = `${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`;
 const newPostForm = document.querySelector("form#newPostForm");
+const path = location.pathname;
 //
 setupPage(apiUrl);
-searchPosts(getPosts, apiUrl);
 //
-newPostForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  await publishPost(`${api_Base_Url}${api_Create_New_Post_EndPoint}`);
-  // location.reload();
-});
+if (path === "/home.html") {
+  searchPosts(getPosts, apiUrl);
+  newPostForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    await publishPost(`${api_Base_Url}${api_Create_New_Post_EndPoint}`);
+    location.reload();
+  });
+}
 //
 export function deleteUserPost(container, postData) {
   container
@@ -36,6 +39,5 @@ export function deleteUserPost(container, postData) {
 }
 
 // export function name(container, postData) {
-//   updatePost(`${api_Base_Url}${api_Update_Post_EndPoint}3645`);
+//   updatePost(`${api_Base_Url}${api_Update_Post_EndPoint}${postData.id}`);
 // }
-updatePost(`${api_Base_Url}${api_Update_Post_EndPoint}3647`);

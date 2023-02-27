@@ -7,10 +7,4 @@ export function userContentUpdate() {
   //   tags: [newFormData.get("hashTag")], // Optional
   //   media: newFormData.get("media"), // Optional
   // });
-  return {
-    title: "string",
-    body: "string",
-    tags: ["string"],
-    media: "",
-  };
 }
