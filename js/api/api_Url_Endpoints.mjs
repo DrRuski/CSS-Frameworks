@@ -12,7 +12,8 @@ export const api_Comment_On_Post_Endpoint = "/api/v1/social/posts/comment";
 export const api_All_Posts_EndPoint = "/api/v1/social/posts";
 export const api_Single_Post_EndPoint = "/api/v1/social/posts";
 // Example with id "/api/v1/social/posts/<id>"
-export const api_All_Followed_Users_Posts_EndPoint = "/api/v1/social/posts/following";
+export const api_All_Followed_Users_Posts_EndPoint =
+  "/api/v1/social/posts/following";
 
 /* PUT */
 export const api_Update_Post_EndPoint = "/api/v1/social/posts/";
@@ -23,3 +24,7 @@ export const api_React_To_Post_EndPoint = "/api/v1/social/posts/react/<symbol>";
 /* DELETE */
 export const api_Delete_Post_EndPoint = "/api/v1/social/posts/";
 // Example with id "/api/v1/social/posts/<id>";
+
+// PROFILE
+export const api_Profile = `/api/v1/social/profiles/`;
+// Example https://api.noroff.dev/api/v1/social/profiles/<name>
