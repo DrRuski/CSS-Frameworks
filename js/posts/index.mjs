@@ -11,6 +11,7 @@ import { publishPost } from "./postManagement/createPost/index.mjs";
 import { deletePost } from "./postManagement/deletePost/index.mjs";
 const apiUrl = `${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`;
 const newPostForm = document.querySelector("form#newPostForm");
+console.log(newPostForm);
 //
 setupPage(apiUrl);
 searchPosts(getPosts, apiUrl);
