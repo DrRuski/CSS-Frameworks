@@ -1,4 +1,4 @@
-
+import { updatePostHeader } from "./updatePostSetup.mjs";
 
 
 
@@ -12,4 +12,3 @@ export async function updatePost(url) {
       console.log(error);
     }
   }
-  
