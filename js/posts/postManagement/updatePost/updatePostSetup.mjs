@@ -5,6 +5,7 @@ export function updatePostHeader(accessToken) {
     method: "PUT",
     body: userContentUpdate(),
     headers: {
+      "Content-Type": "application/json; charset=UTF-8",
       Authorization: `Bearer ${accessToken}`,
     },
   };
