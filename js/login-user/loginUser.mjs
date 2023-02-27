@@ -40,7 +40,7 @@ async function loginUser(email, password) {
       buttonAcceptedStyle();
       setTimeout(() => {
         window.location.pathname = "home.html";
-      }, 2000);
+      }, 1000);
     }
 
     return json;

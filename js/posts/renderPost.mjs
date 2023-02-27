@@ -1,3 +1,5 @@
+import { deleteUserPost } from "./index.mjs";
+
 export function renderPost(postData) {
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
@@ -11,7 +13,12 @@ export function renderPost(postData) {
     <img class="img-fluid card-author-img" src="assets/images/postUserIcon.png" alt="" />
     <h6 class="m-0 card-author"></h6>
   </div>
-  <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+      <ul class="dropdown-menu">
+        <li><button class="dropdown-item mb-1 py-2">Update Post</button></li>
+        <li><button class="dropdown-item text-warning mt-1 py-2 d-flex justify-content-between align-items-center"><span>Report Post</span><i class="fa-solid fa-triangle-exclamation"></i></i></button></li>
+        <li><button id="deletePostBtn" class="dropdown-item bg-danger text-white mt-1 py-2 d-flex justify-content-between align-items-center"><span>Delete Post</span><i class="fa-regular fa-trash-can"></i></button></li>
+      </ul>
   </div>
   <div class="card-body d-flex flex-column gap-2 p-0">
   <div>
@@ -40,6 +47,10 @@ export function renderPost(postData) {
   <a href="specificpost.html?id=${postData.id}" class="btn btn-primary">View Post</a>
   </div>
   </div>`;
+
+  //
+  deleteUserPost(container, postData);
+  //
   postData.tags = postData.tags.filter((tag) => {
     switch (tag) {
       case "":
@@ -50,6 +61,7 @@ export function renderPost(postData) {
         });
     }
   });
+
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;

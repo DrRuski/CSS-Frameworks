@@ -9,6 +9,7 @@ export function renderPosts(postData) {
     renderSpecificPost(postData);
   }
 }
+
 // import { renderPost } from "./renderPost.mjs";
 // export function renderPosts(postData) {
 //   if (Array.isArray(postData)) {
