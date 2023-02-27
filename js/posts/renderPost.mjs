@@ -47,6 +47,7 @@ export function renderPost(postData) {
   <a href="specificpost.html?id=${postData.id}" class="btn btn-primary">View Post</a>
   </div>
   </div>`;
+
   //
   deleteUserPost(container, postData);
   //

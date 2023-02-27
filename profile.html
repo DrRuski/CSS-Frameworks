@@ -1,403 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/css/styles.css" />
+    <link rel="icon" href="assets/images/lazySlothLogoDone.png" />
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="https://kit.fontawesome.com/e338dcafec.js" crossorigin="anonymous"></script>
+    <script src="/js/profile/index.mjs" type="module"></script>
+    <title>Lazy Sloth - Profile</title>
+  </head>
+  <body class="d-flex flex-column gap-3">
+    <header>
+      <nav class="bg-white navbar navbar-expand-lg p-2 py-lg-2 nav-shadow">
+        <div class="container">
+          <div>
+            <a class="navbar-brand" href="index.html">
+              <img class="img-fluid" src="assets/images/lazySlothLogoDoneStacked.png" alt="" />
+            </a>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="styles/css/styles.css" />
-  <link rel="icon" href="assets/images/lazySlothLogoDone.png" />
-  <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-  <script src="https://kit.fontawesome.com/e338dcafec.js" crossorigin="anonymous"></script>
-  <title>Lazy Sloth - Profile</title>
-</head>
-
-<body class="d-flex flex-column gap-3">
-  <header>
-    <nav class="bg-white navbar navbar-expand-lg p-2 py-lg-2 nav-shadow">
-      <div class="container">
-        <div>
-          <a class="navbar-brand" href="home.html">
-            <img class="img-fluid" src="assets/images/lazySlothLogoDoneStacked.png" alt="" />
-          </a>
-        </div>
-
-        <button class="navbar-toggler border-dark" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="text-dark"><i class="fa-solid fa-bars"></i></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav gap-2 gap-lg-4 align-items-end align-items-lg-center">
-            <li class="nav-item">
-              <a href="home.html" class="nav-link py-1 text-dark">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="profile.html" class="nav-link py-1 text-dark" aria-current="page"><span
-                  class="active text-decoration-underline">Profile</span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <main class="d-flex flex-column gap-3">
-    <section class="container">
-      <div class="row">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Profile</li>
-          </ol>
-        </nav>
-      </div>
-    </section>
-
-    <section class="container">
-      <div class="row gap-5 justify-content-center">
-        <div class="d-flex flex-column gap-4 col-lg-6">
-          <div class="d-flex flex-column gap-2">
-            <div class="d-flex justify-content-between">
-              <img class="img-fluid rounded-4" width="150" height="150" src="assets/images/userImage.png" alt="" />
-              <button class="btn align-self-start"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-            </div>
-            <h3 class="userName m-0">Alex Johnson</h3>
-            <p class="m-0">
-              I am a highly skilled and motivated software developer with over 2 years of experience in the industry.
-              I love the outdoors and pumping iron at the gym is my go to when ever i need a break from dominating the
-              digital landscape.
-            </p>
           </div>
 
-          <div>
-            <h5 class="subTitle">Accolades</h5>
-            <ul class="d-flex p-0 m-0 gap-3">
-              <li class="list-group-item">
-                <img class="img-fluid" width="24" src="assets/userBadges/fedBadgeOne.png" alt="" />
+          <button
+            class="navbar-toggler border-dark"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="text-dark"><i class="fa-solid fa-bars"></i></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav gap-2 gap-lg-4 align-items-end align-items-lg-center">
+              <li class="nav-item">
+                <a href="home.html" class="nav-link py-1 text-dark">Home</a>
               </li>
-              <li class="list-group-item">
-                <img class="img-fluid" width="24" src="assets/userBadges/fedBadgeTwo.png" alt="" />
-              </li>
-              <li class="list-group-item">
-                <img class="img-fluid" width="24" src="assets/userBadges/fedBadgeThree.png" alt="" />
-              </li>
-              <li class="list-group-item">
-                <img class="img-fluid" width="24" src="assets/userBadges/fedBadgeFour.png" alt="" />
+              <li class="nav-item">
+                <a href="profile.html" class="nav-link py-1 text-dark" aria-current="page"
+                  ><span class="active text-decoration-underline">Profile</span></a
+                >
               </li>
             </ul>
           </div>
+        </div>
+      </nav>
+    </header>
 
-          <div class="d-flex flex-column gap-2">
-            <div>
-              <h5 class="subTitle">Friends</h5>
-              <div class="d-flex gap-2">
-                <form class="col" role="search">
-                  <input class="form-control" id="search-input" type="search" placeholder="🔎 Search..."
-                    aria-label="Search" />
-                </form>
-                <button class="btn btn-outline-primary btn-sm col-3">Add <i class="fa-solid fa-plus"></i></button>
+    <main class="d-flex flex-column gap-3">
+      <section class="container">
+        <div class="row">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Profile</li>
+            </ol>
+          </nav>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="row gap-5 justify-content-center">
+          <div class="d-flex flex-column gap-4 col-lg-6">
+            <div class="d-flex flex-column gap-2">
+              <div class="position-relative">
+                <div class="d-flex justify-content-between">
+                  <img class="img-fluid rounded-4 profile-banner" src="" alt="" />
+                </div>
+                <div class="position-absolute bottom-0 p-1 m-3 bg-gradient bg-white rounded-4">
+                  <img class="img-fluid rounded-4 profile-avatar" width="150" height="150" src="" alt="" />
+                </div>
               </div>
+              <div class="d-flex justify-content-between my-3">
+                <h3 class="user-name m-0">Alex Johnson</h3>
+                <button class="btn align-self-start"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+              </div>
+              <!-- <p class="m-0">
+                I am a highly skilled and motivated software developer with over 2 years of experience in the industry.
+                I love the outdoors and pumping iron at the gym is my go to when ever i need a break from dominating the
+                digital landscape.
+              </p> -->
             </div>
-
-            <div>
-              <ul class="d-flex p-0 m-0 justify-content-between align-items-center">
+            <!-- <div>
+              <h5 class="subTitle">Accolades</h5>
+              <ul class="d-flex p-0 m-0 gap-3">
                 <li class="list-group-item">
-                  <button class="btn"><i class="fa-solid fa-chevron-left"></i></button>
+                  <img class="img-fluid" width="24" src="assets/userBadges/fedBadgeOne.png" alt="" />
                 </li>
                 <li class="list-group-item">
-                  <button class="btn p-1">
-                    <img class="img-fluid" width="50" src="assets/images/postUserIcon.png" alt="" />
-                  </button>
+                  <img class="img-fluid" width="24" src="assets/userBadges/fedBadgeTwo.png" alt="" />
                 </li>
                 <li class="list-group-item">
-                  <button class="btn p-1">
-                    <img class="img-fluid" width="50" src="assets/images/postUserIcon.png" alt="" />
-                  </button>
+                  <img class="img-fluid" width="24" src="assets/userBadges/fedBadgeThree.png" alt="" />
                 </li>
                 <li class="list-group-item">
-                  <button class="btn p-1">
-                    <img class="img-fluid" width="50" src="assets/images/postUserIcon.png" alt="" />
-                  </button>
-                </li>
-                <li class="list-group-item">
-                  <button class="btn p-1">
-                    <img class="img-fluid" width="50" src="assets/images/postUserIcon.png" alt="" />
-                  </button>
-                </li>
-                <li class="list-group-item">
-                  <button class="btn p-1">
-                    <img class="img-fluid" width="50" src="assets/images/postUserIcon.png" alt="" />
-                  </button>
-                </li>
-                <li class="list-group-item">
-                  <button class="btn"><i class="fa-solid fa-chevron-right"></i></button>
+                  <img class="img-fluid" width="24" src="assets/userBadges/fedBadgeFour.png" alt="" />
                 </li>
               </ul>
+            </div> -->
+            <div class="d-flex flex-column gap-2">
+              <div>
+                <h5 class="subTitle">Friends</h5>
+                <div class="d-flex gap-2">
+                  <form class="col" role="search">
+                    <input
+                      class="form-control"
+                      id="search-input"
+                      type="search"
+                      placeholder="🔎 Search..."
+                      aria-label="Search"
+                    />
+                  </form>
+                  <button class="btn btn-outline-primary btn-sm col-3">Add <i class="fa-solid fa-plus"></i></button>
+                </div>
+              </div>
+
+              <div>
+                <ul class="d-flex p-0 m-0 justify-content-between align-items-center">
+                  <li class="list-group-item">
+                    <button class="btn"><i class="fa-solid fa-chevron-left"></i></button>
+                  </li>
+                  <li class="list-group-item">
+                    <button class="btn p-1">
+                      <img class="img-fluid" width="50" src="assets/images/postUserIcon.png" alt="" />
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <button class="btn p-1">
+                      <img class="img-fluid" width="50" src="assets/images/postUserIcon.png" alt="" />
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <button class="btn p-1">
+                      <img class="img-fluid" width="50" src="assets/images/postUserIcon.png" alt="" />
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <button class="btn p-1">
+                      <img class="img-fluid" width="50" src="assets/images/postUserIcon.png" alt="" />
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <button class="btn p-1">
+                      <img class="img-fluid" width="50" src="assets/images/postUserIcon.png" alt="" />
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <button class="btn"><i class="fa-solid fa-chevron-right"></i></button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="d-flex flex-column gap-3">
-          <div class="d-flex flex-column gap-2">
-            <h4 class="subTitle m-0">Your Posts</h4>
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex flex-column gap-2">
+              <h4 class="subTitle m-0">Your Posts</h4>
 
-            <div>
-              <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse"
-                data-bs-target="#createNewPost" aria-controls="createNewPost" aria-expanded="false"
-                aria-label="Toggle navigation">
-                New Post <i class="fa-solid fa-plus"></i>
-              </button>
-            </div>
-
-            <div class="collapse" id="createNewPost">
-              <form class="col-lg-7">
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="postTitle" placeholder="Post Title" required
-                    minlength="5" />
-                  <label for="postTitle">Post Title</label>
-                </div>
-
-                <div class="input-group mb-3">
-                  <input type="file" class="form-control" id="postImg" required />
-                  <label class="input-group-text" for="postImg">Upload Image</label>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="postHashtags" placeholder="Add Tags" required
-                    minlength="5" />
-                  <label for="postHashtags">Add Tags</label>
-                </div>
-
-                <div class="mb-3">
-                  <textarea class="form-control" id="postContent" rows="5" placeholder="Write your post caption here..."
-                    required minlength="10"></textarea>
-                </div>
-
-                <button class="btn btn-primary btn-sm">
-                  Publish <i class="fa-solid fa-up-right-from-square"></i>
+              <div>
+                <button
+                  class="btn btn-primary btn-sm"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#createNewPost"
+                  aria-controls="createNewPost"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  New Post <i class="fa-solid fa-plus"></i>
                 </button>
-              </form>
-            </div>
-          </div>
+              </div>
 
-          <div class="row gy-3">
-            <div class="col-12 col-md-6 col-lg-6">
-              <div class="card h-100">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                  <div class="d-flex gap-2 align-items-center">
-                    <img class="img-fluid rounded-circle" width="40px" src="assets/images/userImage.png" alt="" />
-                    <h6 class="m-0">Alex Johnson</h6>
+              <div class="collapse" id="createNewPost">
+                <form class="col-lg-7">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="postTitle"
+                      placeholder="Post Title"
+                      required
+                      minlength="5"
+                    />
+                    <label for="postTitle">Post Title</label>
                   </div>
-                  <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                </div>
-                <div class="card-body d-flex flex-column gap-2 p-0">
-                  <div>
-                    <img class="img-fluid" src="assets/postPictures/postTwo.png" alt="" />
+
+                  <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="postImg" required />
+                    <label class="input-group-text" for="postImg">Upload Image</label>
                   </div>
-                  <div class="px-3">
-                    <a href="#" class="card-link text-decoration-none">#cozy</a>
-                    <a href="#" class="card-link text-decoration-none">#relaxing</a>
+
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="postHashtags"
+                      placeholder="Add Tags"
+                      required
+                      minlength="5"
+                    />
+                    <label for="postHashtags">Add Tags</label>
                   </div>
-                  <div class="px-3">
-                    <p class="card-text">
-                      I am of to escape the hustle and bustle of the daily life and enjoy the serenity of the
-                      mountains. Cozy up in my snowy mountain lodge for the ultimate holiday getaway.
-                    </p>
+
+                  <div class="mb-3">
+                    <textarea
+                      class="form-control"
+                      id="postContent"
+                      rows="5"
+                      placeholder="Write your post caption here..."
+                      required
+                      minlength="10"
+                    ></textarea>
                   </div>
-                  <div class="py-3">
-                    <ul class="d-flex p-0 m-0 justify-content-center gap-4">
-                      <li class="list-group-item">
-                        <button class="btn"><i class="fa-regular fa-heart"></i></button>
-                      </li>
-                      <li class="list-group-item">
-                        <button class="btn"><i class="fa-regular fa-comments"></i></button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+
+                  <button class="btn btn-primary btn-sm">
+                    Publish <i class="fa-solid fa-up-right-from-square"></i>
+                  </button>
+                </form>
               </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-6">
-              <div class="card h-100">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                  <div class="d-flex gap-2 align-items-center">
-                    <img class="img-fluid rounded-circle" width="40px" src="assets/images/userImage.png" alt="" />
-                    <h6 class="m-0">Alex Johnson</h6>
+            <div class="row gy-3">
+              <div class="col-12 col-md-6 col-lg-6">
+                <div class="card h-100">
+                  <div class="card-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex gap-2 align-items-center">
+                      <img class="img-fluid rounded-circle" width="40px" src="assets/images/userImage.png" alt="" />
+                      <h6 class="m-0">Alex Johnson</h6>
+                    </div>
+                    <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                   </div>
-                  <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                </div>
-                <div class="card-body d-flex flex-column gap-2">
-                  <div>
-                    <img class="img-fluid" src="assets/postPictures/postThree.png" alt="" />
-                  </div>
-                  <div>
-                    <a class="card-link text-decoration-none" href="#">#holiday</a>
-                    <a class="card-link text-decoration-none" href="#">#athens</a>
-                    <a class="card-link text-decoration-none" href="#">#friendstrip</a>
-                  </div>
-                  <div>
-                    <p class="card-text">
-                      Exploring the ancient city of Athens with my best friends by my side, making memories that will
-                      last a lifetime.
-                    </p>
-                  </div>
-                  <div class="mt-2">
-                    <ul class="d-flex p-0 m-0 justify-content-center gap-4">
-                      <li class="list-group-item">
-                        <button class="btn"><i class="fa-regular fa-heart"></i></button>
-                      </li>
-                      <li class="list-group-item">
-                        <button class="btn"><i class="fa-regular fa-comments"></i></button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-6">
-              <div class="card h-100">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                  <div class="d-flex gap-2 align-items-center">
-                    <img class="img-fluid rounded-circle" width="40px" src="assets/images/userImage.png" alt="" />
-                    <h6 class="m-0">Alex Johnson</h6>
-                  </div>
-                  <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                </div>
-                <div class="card-body d-flex flex-column gap-2">
-                  <div>
-                    <img class="img-fluid" src="assets/postPictures/postFour.png" alt="" />
-                  </div>
-                  <div>
-                    <a href="#" class="card-link text-decoration-none">#boardgames</a>
-                    <a href="#" class="card-link text-decoration-none">#lodge</a>
-                    <a href="#" class="card-link text-decoration-none">#friendship</a>
-                  </div>
-                  <div>
-                    <p class="card-text">
-                      Nothing beats a cozy night in with great friends and a fun board game. Living our best lodge
-                      life.
-                    </p>
-                  </div>
-                  <div class="mt-2">
-                    <ul class="d-flex p-0 m-0 justify-content-center gap-4">
-                      <li class="list-group-item">
-                        <button class="btn"><i class="fa-regular fa-heart"></i></button>
-                      </li>
-                      <li class="list-group-item">
-                        <button class="btn"><i class="fa-regular fa-comments"></i></button>
-                      </li>
-                    </ul>
+                  <div class="card-body d-flex flex-column gap-2 p-0">
+                    <div>
+                      <img class="img-fluid" src="assets/postPictures/postTwo.png" alt="" />
+                    </div>
+                    <div class="px-3">
+                      <a href="#" class="card-link text-decoration-none">#cozy</a>
+                      <a href="#" class="card-link text-decoration-none">#relaxing</a>
+                    </div>
+                    <div class="px-3">
+                      <p class="card-text">
+                        I am of to escape the hustle and bustle of the daily life and enjoy the serenity of the
+                        mountains. Cozy up in my snowy mountain lodge for the ultimate holiday getaway.
+                      </p>
+                    </div>
+                    <div class="py-3">
+                      <ul class="d-flex p-0 m-0 justify-content-center gap-4">
+                        <li class="list-group-item">
+                          <button class="btn"><i class="fa-regular fa-heart"></i></button>
+                        </li>
+                        <li class="list-group-item">
+                          <button class="btn"><i class="fa-regular fa-comments"></i></button>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-12 col-md-6 col-lg-6">
-              <div class="card h-100">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                  <div class="d-flex gap-2 align-items-center">
-                    <img class="img-fluid rounded-circle" width="40px" src="assets/images/userImage.png" alt="" />
-                    <h6 class="m-0">Alex Johnson</h6>
+              <div class="col-12 col-md-6 col-lg-6">
+                <div class="card h-100">
+                  <div class="card-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex gap-2 align-items-center">
+                      <img class="img-fluid rounded-circle" width="40px" src="assets/images/userImage.png" alt="" />
+                      <h6 class="m-0">Alex Johnson</h6>
+                    </div>
+                    <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                   </div>
-                  <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                </div>
-                <div class="card-body d-flex flex-column gap-2">
-                  <div>
-                    <img class="img-fluid" src="assets/postPictures/postOne.png" alt="" />
-                  </div>
-                  <div>
-                    <a href="#" class="card-link text-decoration-none">#socialconnectivity</a>
-                    <a href="#" class="card-link text-decoration-none">#futuretech</a>
-                  </div>
-                  <div>
-                    <p class="card-text">
-                      The future of social connectivity is exciting! Embracing new technologies to bring people closer
-                      together no matter the distance.
-                    </p>
-                  </div>
-                  <div class="mt-2">
-                    <ul class="d-flex p-0 m-0 justify-content-center gap-4">
-                      <li class="list-group-item">
-                        <button class="btn"><i class="fa-regular fa-heart"></i></button>
-                      </li>
-                      <li class="list-group-item">
-                        <button class="btn"><i class="fa-regular fa-comments"></i></button>
-                      </li>
-                    </ul>
+                  <div class="card-body d-flex flex-column gap-2">
+                    <div>
+                      <img class="img-fluid" src="assets/postPictures/postThree.png" alt="" />
+                    </div>
+                    <div>
+                      <a class="card-link text-decoration-none" href="#">#holiday</a>
+                      <a class="card-link text-decoration-none" href="#">#athens</a>
+                      <a class="card-link text-decoration-none" href="#">#friendstrip</a>
+                    </div>
+                    <div>
+                      <p class="card-text">
+                        Exploring the ancient city of Athens with my best friends by my side, making memories that will
+                        last a lifetime.
+                      </p>
+                    </div>
+                    <div class="mt-2">
+                      <ul class="d-flex p-0 m-0 justify-content-center gap-4">
+                        <li class="list-group-item">
+                          <button class="btn"><i class="fa-regular fa-heart"></i></button>
+                        </li>
+                        <li class="list-group-item">
+                          <button class="btn"><i class="fa-regular fa-comments"></i></button>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-12 col-md-6 col-lg-6">
-              <div class="card h-100">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                  <div class="d-flex gap-2 align-items-center">
-                    <img class="img-fluid rounded-circle" width="40px" src="assets/images/userImage.png" alt="" />
-                    <h6 class="m-0">Alex Johnson</h6>
+              <div class="col-12 col-md-6 col-lg-6">
+                <div class="card h-100">
+                  <div class="card-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex gap-2 align-items-center">
+                      <img class="img-fluid rounded-circle" width="40px" src="assets/images/userImage.png" alt="" />
+                      <h6 class="m-0">Alex Johnson</h6>
+                    </div>
+                    <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                   </div>
-                  <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                  <div class="card-body d-flex flex-column gap-2">
+                    <div>
+                      <img class="img-fluid" src="assets/postPictures/postFour.png" alt="" />
+                    </div>
+                    <div>
+                      <a href="#" class="card-link text-decoration-none">#boardgames</a>
+                      <a href="#" class="card-link text-decoration-none">#lodge</a>
+                      <a href="#" class="card-link text-decoration-none">#friendship</a>
+                    </div>
+                    <div>
+                      <p class="card-text">
+                        Nothing beats a cozy night in with great friends and a fun board game. Living our best lodge
+                        life.
+                      </p>
+                    </div>
+                    <div class="mt-2">
+                      <ul class="d-flex p-0 m-0 justify-content-center gap-4">
+                        <li class="list-group-item">
+                          <button class="btn"><i class="fa-regular fa-heart"></i></button>
+                        </li>
+                        <li class="list-group-item">
+                          <button class="btn"><i class="fa-regular fa-comments"></i></button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body d-flex flex-column gap-2">
-                  <div>
-                    <img class="img-fluid" src="assets/postPictures/postSix.png" alt="" />
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-6">
+                <div class="card h-100">
+                  <div class="card-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex gap-2 align-items-center">
+                      <img class="img-fluid rounded-circle" width="40px" src="assets/images/userImage.png" alt="" />
+                      <h6 class="m-0">Alex Johnson</h6>
+                    </div>
+                    <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                   </div>
-                  <div>
-                    <a href="#" class="card-link text-decoration-none">#currentevents</a>
-                    <a href="#" class="card-link text-decoration-none">#worldnews</a>
+                  <div class="card-body d-flex flex-column gap-2">
+                    <div>
+                      <img class="img-fluid" src="assets/postPictures/postOne.png" alt="" />
+                    </div>
+                    <div>
+                      <a href="#" class="card-link text-decoration-none">#socialconnectivity</a>
+                      <a href="#" class="card-link text-decoration-none">#futuretech</a>
+                    </div>
+                    <div>
+                      <p class="card-text">
+                        The future of social connectivity is exciting! Embracing new technologies to bring people closer
+                        together no matter the distance.
+                      </p>
+                    </div>
+                    <div class="mt-2">
+                      <ul class="d-flex p-0 m-0 justify-content-center gap-4">
+                        <li class="list-group-item">
+                          <button class="btn"><i class="fa-regular fa-heart"></i></button>
+                        </li>
+                        <li class="list-group-item">
+                          <button class="btn"><i class="fa-regular fa-comments"></i></button>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <div>
-                    <p class="card-text">
-                      The world is ever-changing and it's important to stay informed and educated about current
-                      events. Let's work together to make the world a better place.
-                    </p>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-6">
+                <div class="card h-100">
+                  <div class="card-header d-flex align-items-center justify-content-between">
+                    <div class="d-flex gap-2 align-items-center">
+                      <img class="img-fluid rounded-circle" width="40px" src="assets/images/userImage.png" alt="" />
+                      <h6 class="m-0">Alex Johnson</h6>
+                    </div>
+                    <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                   </div>
-                  <div class="mt-2">
-                    <ul class="d-flex p-0 m-0 justify-content-center gap-4">
-                      <li class="list-group-item">
-                        <button class="btn"><i class="fa-regular fa-heart"></i></button>
-                      </li>
-                      <li class="list-group-item">
-                        <button class="btn"><i class="fa-regular fa-comments"></i></button>
-                      </li>
-                    </ul>
+                  <div class="card-body d-flex flex-column gap-2">
+                    <div>
+                      <img class="img-fluid" src="assets/postPictures/postSix.png" alt="" />
+                    </div>
+                    <div>
+                      <a href="#" class="card-link text-decoration-none">#currentevents</a>
+                      <a href="#" class="card-link text-decoration-none">#worldnews</a>
+                    </div>
+                    <div>
+                      <p class="card-text">
+                        The world is ever-changing and it's important to stay informed and educated about current
+                        events. Let's work together to make the world a better place.
+                      </p>
+                    </div>
+                    <div class="mt-2">
+                      <ul class="d-flex p-0 m-0 justify-content-center gap-4">
+                        <li class="list-group-item">
+                          <button class="btn"><i class="fa-regular fa-heart"></i></button>
+                        </li>
+                        <li class="list-group-item">
+                          <button class="btn"><i class="fa-regular fa-comments"></i></button>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <div class="container">
-    <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-          <img class="img-fluid" width="24" height="24" src="assets/images/lazySlothLogoDone.png" alt="" />
-        </a>
-        <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Lazy Sloth, Inc</span>
-      </div>
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img class="img-fluid" width="24" height="24" src="assets/images/lazySlothLogoDone.png" alt="" />
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Lazy Sloth, Inc</span>
+        </div>
 
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3">
-          <a class="text-muted" href="#"><i class="fa-brands fa-twitter"></i></a>
-        </li>
-        <li class="ms-3">
-          <a class="text-muted" href="#"><i class="fa-brands fa-instagram"></i></a>
-        </li>
-        <li class="ms-3">
-          <a class="text-muted" href="#"><i class="fa-brands fa-square-facebook"></i></a>
-        </li>
-      </ul>
-    </footer>
-  </div>
-</body>
-
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3">
+            <a class="text-muted" href="#"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-muted" href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-muted" href="#"><i class="fa-brands fa-square-facebook"></i></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+  </body>
 </html>
