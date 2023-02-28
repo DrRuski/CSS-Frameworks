@@ -84,11 +84,7 @@ export function renderPost(postData) {
   <a href="specificpost.html?id=${postData.id}" class="btn btn-primary">View Post</a>
   </div>
   </div>`;
-  //
-  updateUserPost(container, postData);
-  //
-  deleteUserPost(container, postData);
-  //
+  
   postData.tags = postData.tags.filter((tag) => {
     switch (tag) {
       case "":
@@ -99,10 +95,16 @@ export function renderPost(postData) {
         });
     }
   });
-
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
+//
+updateUserPost(container, postData);
+//
+deleteUserPost(container, postData);
+//
 }
+
+

@@ -12,18 +12,21 @@ import { publishPost } from "./postManagement/createPost/index.mjs";
 import { deletePost } from "./postManagement/deletePost/index.mjs";
 import { updatePost } from "./postManagement/updatePost/index.mjs";
 const apiUrl = `${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`;
-const newPostForm = document.querySelector("form#newPostForm");
 const path = location.pathname;
 //
 setupPage(apiUrl);
 //
 if (path === "/home.html") {
+  //
   searchPosts(getPosts, apiUrl);
+  //
+  const newPostForm = document.querySelector("form#newPostForm");
   newPostForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     await publishPost(`${api_Base_Url}${api_Create_New_Post_EndPoint}`);
     location.reload();
   });
+  //
 }
 //
 export function deleteUserPost(container, postData) {
@@ -37,7 +40,7 @@ export function deleteUserPost(container, postData) {
       }, 250);
     });
 }
-
+//
 export function updateUserPost(container, postData) {
   container
     .querySelector("form#updatePostForm")
