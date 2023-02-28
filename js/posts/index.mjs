@@ -12,9 +12,9 @@ import { publishPost } from "./postManagement/createPost/index.mjs";
 // import { deletePost } from "./postManagement/deletePost/index.mjs";
 // import { updatePost } from "./postManagement/updatePost/index.mjs";
 const path = location.pathname;
-//
-setupPage(`${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`);
-//
+
+setupPage(apiUrl);
+
 if (path === "/home.html") {
   //
   searchPosts(
@@ -30,7 +30,7 @@ if (path === "/home.html") {
   });
   //
 }
-////
+//
 // export function deleteUserPost(container, postData) {
 //   container
 //     .querySelector("button#deletePostBtn")
