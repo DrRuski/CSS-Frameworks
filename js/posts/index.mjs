@@ -11,23 +11,9 @@ import { searchPosts } from "./postManagement/searchPost/searchPosts.mjs";
 import { publishPost } from "./postManagement/createPost/index.mjs";
 import { deletePost } from "./postManagement/deletePost/index.mjs";
 import { updatePost } from "./postManagement/updatePost/index.mjs";
-const apiUrl = `${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`;
 const path = location.pathname;
 //
-setupPage(apiUrl);
-//
-if (path === "/home.html") {
-  //
-  searchPosts(getPosts, apiUrl);
-  //
-  const newPostForm = document.querySelector("form#newPostForm");
-  newPostForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    await publishPost(`${api_Base_Url}${api_Create_New_Post_EndPoint}`);
-    location.reload();
-  });
-  //
-}
+setupPage(`${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`);
 //
 export function deleteUserPost(container, postData) {
   container
@@ -52,3 +38,17 @@ export function updateUserPost(container, postData) {
       }, 250);
     });
 }
+//
+if (path === "/home.html") {
+  //
+  searchPosts(getPosts, apiUrl);
+  //
+  const newPostForm = document.querySelector("form#newPostForm");
+  newPostForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    await publishPost(`${api_Base_Url}${api_Create_New_Post_EndPoint}`);
+    location.reload();
+  });
+  //
+}
+
