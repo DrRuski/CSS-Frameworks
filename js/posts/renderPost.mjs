@@ -1,5 +1,12 @@
-import { deleteUserPost } from "./index.mjs";
-import { updateUserPost } from "./index.mjs";
+// import { deleteUserPost } from "./index.mjs";
+// import { updateUserPost } from "./index.mjs";
+import { deletePost } from "./postManagement/deletePost/index.mjs";
+import { updatePost } from "./postManagement/updatePost/index.mjs";
+import {
+  api_Base_Url,
+  api_Delete_Post_EndPoint,
+  api_Update_Post_EndPoint,
+} from "../api/api_Url_Endpoints.mjs";
 
 export function renderPost(postData) {
   const postContainer = document.querySelector(".write-post");
@@ -84,7 +91,7 @@ export function renderPost(postData) {
   <a href="specificpost.html?id=${postData.id}" class="btn btn-primary">View Post</a>
   </div>
   </div>`;
-  
+
   postData.tags = postData.tags.filter((tag) => {
     switch (tag) {
       case "":
@@ -100,11 +107,28 @@ export function renderPost(postData) {
   container.querySelector(".card-img").src = postData.media;
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
-//
-updateUserPost(container, postData);
-//
-deleteUserPost(container, postData);
-//
+  //
+  // deleteUserPost(container, postData);
+  // updateUserPost(container, postData);
+  //
+  container
+    .querySelector("button#deletePostBtn")
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      deletePost(`${api_Base_Url}${api_Delete_Post_EndPoint}${postData.id}`);
+      setTimeout(() => {
+        location.reload();
+      }, 250);
+    });
+  //
+  container
+    .querySelector("form#updatePostForm")
+    .addEventListener("submit", (e) => {
+      e.preventDefault();
+      updatePost(`${api_Base_Url}${api_Update_Post_EndPoint}${postData.id}`);
+      setTimeout(() => {
+        location.reload();
+      }, 250);
+    });
+  //
 }
-
-
