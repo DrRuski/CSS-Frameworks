@@ -14,9 +14,9 @@ import { updatePost } from "./postManagement/updatePost/index.mjs";
 const apiUrl = `${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`;
 const newPostForm = document.querySelector("form#newPostForm");
 const path = location.pathname;
-//
+console.log("This is index.mjs");
+
 setupPage(apiUrl);
-//
 if (path === "/home.html") {
   searchPosts(getPosts, apiUrl);
   newPostForm.addEventListener("submit", async (e) => {
@@ -25,19 +25,12 @@ if (path === "/home.html") {
     location.reload();
   });
 }
-//
 export function deleteUserPost(container, postData) {
-  container
-    .querySelector("button#deletePostBtn")
-    .addEventListener("click", (e) => {
-      e.preventDefault();
-      deletePost(`${api_Base_Url}${api_Delete_Post_EndPoint}${postData.id}`);
-      setTimeout(() => {
-        location.reload();
-      }, 250);
-    });
+  container.querySelector("button#deletePostBtn").addEventListener("click", (e) => {
+    e.preventDefault();
+    deletePost(`${api_Base_Url}${api_Delete_Post_EndPoint}${postData.id}`);
+    setTimeout(() => {
+      location.reload();
+    }, 250);
+  });
 }
-
-// export function name(container, postData) {
-//   updatePost(`${api_Base_Url}${api_Update_Post_EndPoint}${postData.id}`);
-// }
