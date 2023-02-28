@@ -1,4 +1,12 @@
-import { deleteUserPost } from "./index.mjs";
+// import { deleteUserPost } from "./index.mjs";
+// import { updateUserPost } from "./index.mjs";
+import { deletePost } from "./postManagement/deletePost/index.mjs";
+import { updatePost } from "./postManagement/updatePost/index.mjs";
+import {
+  api_Base_Url,
+  api_Delete_Post_EndPoint,
+  api_Update_Post_EndPoint,
+} from "../api/api_Url_Endpoints.mjs";
 
 export function renderPost(postData) {
   const postContainer = document.querySelector(".write-post");
@@ -15,10 +23,46 @@ export function renderPost(postData) {
   </div>
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>
       <ul class="dropdown-menu">
-        <li><button class="dropdown-item mb-1 py-2">Update Post</button></li>
+        <li><button class="dropdown-item mb-1 py-2" data-bs-toggle="modal" data-bs-target="#updatePostModal">Update Post</button></li>
         <li><button class="dropdown-item text-warning mt-1 py-2 d-flex justify-content-between align-items-center"><span>Report Post</span><i class="fa-solid fa-triangle-exclamation"></i></i></button></li>
         <li><button id="deletePostBtn" class="dropdown-item bg-danger text-white mt-1 py-2 d-flex justify-content-between align-items-center"><span>Delete Post</span><i class="fa-regular fa-trash-can"></i></button></li>
       </ul>
+
+
+      <div class="modal fade" id="updatePostModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="updatePostTitle">Update Current Post</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="updatePostForm">
+                    <div class="form-floating mb-3">
+                    <input name="title" type="text" class="form-control" id="postTitle" placeholder="Post Title" required minlength="3" />
+                    <label for="postTitle">Post Title</label>
+                    </div>
+                    <div class="input-group mb-3">
+                    <input name="media" type="url" class="form-control" id="postImg" />
+                    <label class="input-group-text" for="postImg">Image URL</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                    <input name="hashTag" type="text" class="form-control" id="postHashtags" placeholder="Add Tags" />
+                    <label for="postHashtags">Add Tags</label>
+                    </div>
+                    <div class="mb-3">
+                    <textarea name="postBody" class="form-control" id="postContent" rows="5" placeholder="Write your post caption here..."
+                        minlength="5"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-sm">Update Post <i class="fa-solid fa-up-right-from-square"></i></button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
   </div>
   <div class="card-body d-flex flex-column gap-2 p-0">
   <div>
@@ -48,9 +92,6 @@ export function renderPost(postData) {
   </div>
   </div>`;
 
-  //
-  deleteUserPost(container, postData);
-  //
   postData.tags = postData.tags.filter((tag) => {
     switch (tag) {
       case "":
@@ -61,10 +102,33 @@ export function renderPost(postData) {
         });
     }
   });
-
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
+  //
+  // deleteUserPost(container, postData);
+  // updateUserPost(container, postData);
+  //
+  container
+    .querySelector("button#deletePostBtn")
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      deletePost(`${api_Base_Url}${api_Delete_Post_EndPoint}${postData.id}`);
+      setTimeout(() => {
+        location.reload();
+      }, 250);
+    });
+  //
+  container
+    .querySelector("form#updatePostForm")
+    .addEventListener("submit", (e) => {
+      e.preventDefault();
+      updatePost(`${api_Base_Url}${api_Update_Post_EndPoint}${postData.id}`);
+      setTimeout(() => {
+        location.reload();
+      }, 250);
+    });
+  //
 }
