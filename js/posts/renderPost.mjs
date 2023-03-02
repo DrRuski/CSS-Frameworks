@@ -1,13 +1,6 @@
-// import { deleteUserPost } from "./index.mjs";
-// import { updateUserPost } from "./index.mjs";
-import { deletePost } from "./postManagement/deletePost/index.mjs";
-import { updatePost } from "./postManagement/updatePost/index.mjs";
-import {
-  api_Base_Url,
-  api_Delete_Post_EndPoint,
-  api_Update_Post_EndPoint,
-} from "../api/api_Url_Endpoints.mjs";
-
+import { deleteUserPost } from "./postManagement/deletePost/deleteConnection.mjs";
+import { updateUserPost } from "./postManagement/updatePost/updateConnection.mjs";
+//
 export function renderPost(postData) {
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
@@ -108,27 +101,7 @@ export function renderPost(postData) {
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
   //
-  // deleteUserPost(container, postData);
-  // updateUserPost(container, postData);
-  //
-  container
-    .querySelector("button#deletePostBtn")
-    .addEventListener("click", (e) => {
-      e.preventDefault();
-      deletePost(`${api_Base_Url}${api_Delete_Post_EndPoint}${postData.id}`);
-      setTimeout(() => {
-        location.reload();
-      }, 250);
-    });
-  //
-  container
-    .querySelector("form#updatePostForm")
-    .addEventListener("submit", (e) => {
-      e.preventDefault();
-      updatePost(`${api_Base_Url}${api_Update_Post_EndPoint}${postData.id}`);
-      setTimeout(() => {
-        location.reload();
-      }, 250);
-    });
-  //
+  deleteUserPost(container, postData);
+  updateUserPost(container, postData);
+  //  
 }
