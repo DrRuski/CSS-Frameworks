@@ -10,7 +10,6 @@ export async function displayProfile(url) {
     };
     const response = await fetch(url, getData);
     const displayProfile = await response.json();
-    console.log(displayProfile);
     editProfile(displayProfile);
   } catch (error) {
     console.log(error);
