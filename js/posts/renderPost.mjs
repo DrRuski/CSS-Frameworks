@@ -103,5 +103,5 @@ export function renderPost(postData) {
   //
   deleteUserPost(container, postData);
   updateUserPost(container, postData);
-  //  
+  //
 }
