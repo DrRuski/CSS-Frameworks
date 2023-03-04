@@ -1,9 +1,11 @@
 // import { renderPosts } from "../../renderPosts.mjs";
+// const newOld = document.querySelector("a#newOld");
+// const oldNew = document.querySelector("a#oldNew");
 
-// export async function searchPosts(postData, url) {
+// export async function filterPosts(postData, url) {
 //   const postsArray = await postData(url);
-//   const searchForm = document.querySelector("form#searchForm");
-//   searchForm.addEventListener("submit", (e) => {
+
+//   searchForm.addEventListener("click", (e) => {
 //     e.preventDefault();
 //     const form = e.target;
 //     const searchTerm = form.search.value;
