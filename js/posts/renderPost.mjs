@@ -1,6 +1,6 @@
 import { deleteUserPost } from "./postManagement/deletePost/deleteConnection.mjs";
 import { updateUserPost } from "./postManagement/updatePost/updateConnection.mjs";
-//
+
 export function renderPost(postData) {
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
@@ -14,6 +14,9 @@ export function renderPost(postData) {
     <img class="img-fluid card-author-img" src="assets/images/postUserIcon.png" alt="" />
     <h6 class="m-0 card-author"></h6>
   </div>
+  
+  <button class="btn text-primary follow-user" type="button" id="${postData.author.name}">Follow</button>
+
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>
       <ul class="dropdown-menu">
         <li><button class="dropdown-item mb-1 py-2" data-bs-toggle="modal" data-bs-target="#updatePostModal">Update Post</button></li>
@@ -84,7 +87,6 @@ export function renderPost(postData) {
   <a href="specificpost.html?id=${postData.id}" class="btn btn-primary">View Post</a>
   </div>
   </div>`;
-
   postData.tags = postData.tags.filter((tag) => {
     switch (tag) {
       case "":
@@ -100,8 +102,7 @@ export function renderPost(postData) {
   container.querySelector(".card-img").src = postData.media;
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
-  //
+
   deleteUserPost(container, postData);
   updateUserPost(container, postData);
-  //
 }

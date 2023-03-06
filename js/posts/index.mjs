@@ -14,4 +14,3 @@ newPostForm.addEventListener("submit", async (e) => {
   await publishPost(`${api_Base_Url}${api_Create_New_Post_EndPoint}`);
   location.reload();
 });
-//

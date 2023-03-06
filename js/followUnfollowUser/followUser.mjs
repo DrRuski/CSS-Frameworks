@@ -1,7 +1,4 @@
-import { api_Base_Url, api_Profile } from "../api/api_Url_Endpoints.mjs";
-import { currentProfile } from "../profile/getCurrentProfile.mjs";
-const urlFollow = `${api_Base_Url}${api_Profile}Gaute/follow`;
-const urlUnFollow = `${api_Base_Url}${api_Profile}IlyaTest/unfollow`;
+const url = "https://api.noroff.dev/api/v1/social/profiles";
 async function followProfile(url) {
   try {
     const accessToken = localStorage.getItem("accessToken");
@@ -18,4 +15,4 @@ async function followProfile(url) {
     console.log(error);
   }
 }
-followProfile(urlFollow);
+followProfile(url);
