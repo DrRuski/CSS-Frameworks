@@ -95,13 +95,15 @@
 
       <div class="border-top"></div>
 
-      <div class="row align-items-center">
-        <ul class="d-flex justify-content-between justify-content-lg-start gap-lg-3 m-0">
-          <li class="list-group-item"><button id="allPosts" type="button" class="btn btn-sm btn-primary subText">All</button></li>
-          <li class="list-group-item"><button id="newOld" type="button" class="btn btn-sm btn-outline-primary subText">Posts New - Old</button></li>
-          <li class="list-group-item"><button id="oldNew" type="button" class="btn btn-sm btn-outline-primary subText">Posts Old - New</button></li>
-          <li class="list-group-item"><button id="mostLiked" type="button" class="btn btn-sm btn-outline-primary subText">Most Liked</button></li>
-        </ul>
+      <div class="row">
+        <div class="col-6 col-lg-2">
+          <select id="postsFilter" class="form-select m-0">
+            <option value="allPosts">All Posts</option>
+            <option type="date" value="newOldPosts">New - Old</option>
+            <option type="date" value="oldNewPosts">Old - New</option>
+            <option value="mostLikedPosts">Most Liked</option>
+          </select>
+        </div>
       </div>
 
       <div class="row gy-3 gx-3 write-post"></div>

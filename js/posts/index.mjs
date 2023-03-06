@@ -23,10 +23,3 @@ document
     location.reload();
   });
 //
-
-// const newPostForm = document.querySelector("form#newPostForm");
-// newPostForm.addEventListener("submit", async (e) => {
-//   e.preventDefault();
-//   await publishPost(`${api_Base_Url}${api_Create_New_Post_EndPoint}`);
-//   location.reload();
-// });
