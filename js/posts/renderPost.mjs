@@ -15,7 +15,7 @@ export function renderPost(postData) {
     <h6 class="m-0 card-author"></h6>
   </div>
   
-  <button class="btn text-primary follow-user" type="button" id="${postData.author.name}">Follow</button>
+<button class="btn text-primary follow-user" type="button" id="${postData.author.name}"></button>
 
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>
       <ul class="dropdown-menu">
