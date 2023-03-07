@@ -1,5 +1,6 @@
 import { deleteUserPost } from "./postManagement/deletePost/deleteConnection.mjs";
 import { updateUserPost } from "./postManagement/updatePost/updateConnection.mjs";
+import { userPostComment } from "./postManagement/commentPost/commentConnection.mjs";
 //
 export function renderPost(postData) {
   const postContainer = document.querySelector(".write-post");
@@ -22,11 +23,12 @@ export function renderPost(postData) {
       </ul>
 
 
+
       <div class="modal fade" id="updatePostModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="updatePostTitle">Update Current Post</h1>
+                <h1 class="modal-title fs-5">Update Current Post</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -56,6 +58,28 @@ export function renderPost(postData) {
 
 
 
+      <div class="modal fade" id="commentModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Leave a Comment</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="commentPostForm">
+                    <div class="mb-3">
+                    <textarea name="postBody" class="form-control" id="postContent" rows="5" placeholder="Write your post comment here..."
+                        minlength="5"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-sm">Publish Comment <i class="fa-solid fa-up-right-from-square"></i></button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
   </div>
   <div class="card-body d-flex flex-column gap-2 p-0">
   <div>
@@ -76,7 +100,7 @@ export function renderPost(postData) {
       <button class="btn"><i class="fa-regular fa-heart"></i></button>
     </li>
     <li class="list-group-item">
-      <button class="btn"><i class="fa-regular fa-comments"></i></button>
+      <button class="btn" data-bs-toggle="modal" data-bs-target="#commentModal"><i class="fa-regular fa-comments"></i></button>
     </li>
   </ul>
   </div>
@@ -103,5 +127,6 @@ export function renderPost(postData) {
   //
   deleteUserPost(container, postData);
   updateUserPost(container, postData);
+  userPostComment(container, postData);
   //
 }
