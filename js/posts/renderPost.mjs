@@ -3,6 +3,16 @@ import { updateUserPost } from "./postManagement/updatePost/updateConnection.mjs
 import { userPostComment } from "./postManagement/commentPost/commentConnection.mjs";
 //
 export function renderPost(postData) {
+  // console.log(postData.comments);
+  const postCommentsArray = postData.comments;
+  const postComment = postCommentsArray.map((e) => {
+    if (e.body) {
+      // return JSON.stringify(e.body);
+      return e.body;
+    }
+  });
+  console.log(postComment);
+
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
   container.setAttribute("id", postData.id);
@@ -62,10 +72,16 @@ export function renderPost(postData) {
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5">Leave a Comment</h1>
+                <h1 class="modal-title fs-5">Comments</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            
+            <div class="modal-body d-flex flex-column gap-2">
+
+            <div><p class="postComment"></p></div>
+
+            <div class="border-top"></div>
+
                 <form id="commentPostForm">
                     <div class="mb-3">
                     <textarea name="postBody" class="form-control" id="postContent" rows="5" placeholder="Write your post comment here..."
@@ -124,6 +140,8 @@ export function renderPost(postData) {
   container.querySelector(".card-img").src = postData.media;
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
+  container.querySelector(".postComment").innerHTML = `${postComment}`;
+
   //
   deleteUserPost(container, postData);
   updateUserPost(container, postData);
