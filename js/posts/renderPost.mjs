@@ -3,15 +3,15 @@ import { updateUserPost } from "./postManagement/updatePost/updateConnection.mjs
 import { userPostComment } from "./postManagement/commentPost/commentConnection.mjs";
 //
 export function renderPost(postData) {
-  // console.log(postData.comments);
-  const postCommentsArray = postData.comments;
-  const postComment = postCommentsArray.map((e) => {
-    if (e.body) {
-      // return JSON.stringify(e.body);
-      return e.body;
-    }
-  });
+
+  
+  const postsContainerArray = postData.comments;
+  const postComment = postsContainerArray.map((e) => {
+    return `<p>${e.body}</p>`
+  }).join("")
+
   console.log(postComment);
+
 
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
@@ -78,7 +78,7 @@ export function renderPost(postData) {
             
             <div class="modal-body d-flex flex-column gap-2">
 
-            <div><p class="postComment"></p></div>
+            <div class="d-flex flex-column">${postComment}</div>
 
             <div class="border-top"></div>
 
@@ -135,13 +135,14 @@ export function renderPost(postData) {
         });
     }
   });
+
+ 
+
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
-  container.querySelector(".postComment").innerHTML = `${postComment}`;
-
   //
   deleteUserPost(container, postData);
   updateUserPost(container, postData);
