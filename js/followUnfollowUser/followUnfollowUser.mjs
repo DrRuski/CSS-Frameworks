@@ -1,7 +1,7 @@
 import { checkFollowing } from "./checkFollowing.mjs";
 import { checkFollow } from "./index.mjs";
 
-export async function followUser(url) {
+export async function followUnfollowUser(url) {
   try {
     const accessToken = localStorage.getItem("accessToken");
     const getData = {

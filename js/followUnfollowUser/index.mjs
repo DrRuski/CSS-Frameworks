@@ -1,7 +1,5 @@
 import { api_Base_Url, api_Profile } from "../api/api_Url_Endpoints.mjs";
 import { currentProfile } from "../profile/getCurrentProfile.mjs";
-import { isFollowing } from "./isFollowing.mjs";
-import { followUser } from "./followUser.mjs";
 
 export const url = `${api_Base_Url}${api_Profile}`;
 const profile = JSON.parse(localStorage.getItem("userProfile"));
