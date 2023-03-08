@@ -1,5 +1,7 @@
-const url = "https://api.noroff.dev/api/v1/social/profiles";
-async function followProfile(url) {
+import { checkFollowing } from "./checkFollowing.mjs";
+import { checkFollow } from "./index.mjs";
+
+export async function followUser(url) {
   try {
     const accessToken = localStorage.getItem("accessToken");
     const getData = {
@@ -10,9 +12,9 @@ async function followProfile(url) {
     };
     const response = await fetch(url, getData);
     const postData = await response.json();
-    console.log(postData);
+    console.log(postData.following);
+    checkFollowing(checkFollow);
   } catch (error) {
     console.log(error);
   }
 }
-followProfile(url);
