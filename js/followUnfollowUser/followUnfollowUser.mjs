@@ -12,7 +12,6 @@ export async function followUnfollowUser(url) {
     };
     const response = await fetch(url, getData);
     const postData = await response.json();
-    console.log(postData.following);
     checkFollowing(checkFollow);
   } catch (error) {
     console.log(error);

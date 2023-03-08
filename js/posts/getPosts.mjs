@@ -9,8 +9,7 @@ export async function getPosts(url) {
       },
     };
     const response = await fetch(url, getData);
-    const postData = await response.json();
-    return postData;
+    return await response.json();
   } catch (error) {
     console.log(error);
   }

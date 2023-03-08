@@ -1,22 +1,33 @@
-// import { renderPosts } from "../../renderPosts.mjs";
+import { renderPosts } from "../../renderPosts.mjs";
+import {
+  getLikedFilter,
+  newOldFilter,
+  oldNewFilter,
+} from "./filterTerms/getTerms.mjs";
 
-// export async function searchPosts(postData, url) {
-//   const postsArray = await postData(url);
-//   const searchForm = document.querySelector("form#searchForm");
-//   searchForm.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     const form = e.target;
-//     const searchTerm = form.search.value;
-//     //
-//     const term = searchTerm.toLowerCase();
-//     //
-//     const filteredPosts = postsArray.filter((post) => {
-//       const postTitle = post.title.toLowerCase();
-//       const author = post.author.name.toLowerCase();
-//       return postTitle.includes(term) || author.includes(term);
-//     });
-//     const postContainer = document.querySelector(".write-post");
-//     postContainer.innerHTML = "";
-//     renderPosts(filteredPosts);
-//   });
-// }
+export async function filterPosts(postData, url) {
+  const postsArray = await postData(url);
+  const postsFilter = document.querySelector("select#postsFilter");
+  const postContainer = document.querySelector(".write-post");
+
+  postsFilter.addEventListener("change", (e) => {
+    const selectValue = postsFilter.value;
+
+    if (selectValue === "allPosts") {
+      postContainer.innerHTML = "";
+      return renderPosts(postsArray);
+    }
+    if (selectValue === "newOldPosts") {
+      postContainer.innerHTML = "";
+      return renderPosts(newOldFilter(postsArray));
+    }
+    if (selectValue === "oldNewPosts") {
+      postContainer.innerHTML = "";
+      return renderPosts(oldNewFilter(postsArray));
+    }
+    if (selectValue === "mostLikedPosts") {
+      postContainer.innerHTML = "";
+      return renderPosts(getLikedFilter(postsArray));
+    }
+  });
+}
