@@ -5,7 +5,6 @@ import {
 import { commentPost } from "./index.mjs";
 
 export function userPostComment(container) {
-  console.log(container.id);
   container
     .querySelector("form#postCommentForm")
     .addEventListener("submit", async (e) => {

@@ -2,7 +2,7 @@ import { userPostComment } from "./postManagement/commentPost/commentConnection.
 const breadCrumbTitle = document.querySelector(".postTitle");
 
 export function renderSpecificPost(postData) {
-  // console.log(postData);
+  console.log(postData);
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
   container.setAttribute("id", postData.id);

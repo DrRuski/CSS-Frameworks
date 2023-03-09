@@ -9,11 +9,10 @@ import { searchPosts } from "./postManagement/searchPost/searchPosts.mjs";
 import { publishPost } from "./postManagement/createPost/index.mjs";
 import { filterPosts } from "./postManagement/filterPost/filterPosts.mjs";
 //
-setupPage(`${api_Base_Url}${api_All_Posts_EndPoint}?_author=true&_comments=true`);
+setupPage(`${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`);
 //
 searchPosts(getPosts, `${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`);
 //
-
 filterPosts(getPosts, `${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`);
 //
 document
