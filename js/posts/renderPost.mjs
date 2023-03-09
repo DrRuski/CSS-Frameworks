@@ -1,18 +1,11 @@
+import { userPostComment } from "./postManagement/commentPost/commentConnection.mjs";
 import { deleteUserPost } from "./postManagement/deletePost/deleteConnection.mjs";
 import { updateUserPost } from "./postManagement/updatePost/updateConnection.mjs";
-import { userPostComment } from "./postManagement/commentPost/commentConnection.mjs";
 //
 export function renderPost(postData) {
-
-  
-  const postsContainerArray = postData.comments;
-  const postComment = postsContainerArray.map((e) => {
-    return `<p>${e.body}</p>`
-  }).join("")
-
-  console.log(postComment);
-
-
+//
+// console.log(postData);
+//
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
   container.setAttribute("id", postData.id);
@@ -44,19 +37,19 @@ export function renderPost(postData) {
             <div class="modal-body">
                 <form id="updatePostForm">
                     <div class="form-floating mb-3">
-                    <input name="title" type="text" class="form-control" id="postTitle" placeholder="Post Title" required minlength="3" />
-                    <label for="postTitle">Post Title</label>
+                      <input name="title" type="text" class="form-control" id="postTitle" placeholder="Post Title" required minlength="3" />
+                      <label for="postTitle">Post Title</label>
                     </div>
                     <div class="input-group mb-3">
-                    <input name="media" type="url" class="form-control" id="postImg" />
-                    <label class="input-group-text" for="postImg">Image URL</label>
+                      <input name="media" type="url" class="form-control" id="postImg" />
+                      <label class="input-group-text" for="postImg">Image URL</label>
                     </div>
                     <div class="form-floating mb-3">
-                    <input name="hashTag" type="text" class="form-control" id="postHashtags" placeholder="Add Tags" />
-                    <label for="postHashtags">Add Tags</label>
+                      <input name="hashTag" type="text" class="form-control" id="postHashtags" placeholder="Add Tags" />
+                      <label for="postHashtags">Add Tags</label>
                     </div>
                     <div class="mb-3">
-                    <textarea name="postBody" class="form-control" id="postContent" rows="5" placeholder="Write your post caption here..."
+                      <textarea name="postBody" class="form-control" id="postContent" rows="5" placeholder="Write your post caption here..."
                         minlength="5"></textarea>
                     </div>
                     <button class="btn btn-primary btn-sm">Update Post <i class="fa-solid fa-up-right-from-square"></i></button>
@@ -78,11 +71,11 @@ export function renderPost(postData) {
             
             <div class="modal-body d-flex flex-column gap-2">
 
-            <div class="d-flex flex-column">${postComment}</div>
+            <div></div>
 
             <div class="border-top"></div>
 
-                <form id="commentPostForm">
+                <form id="${postData.id}" class="test">
                     <div class="mb-3">
                     <textarea name="postBody" class="form-control" id="postContent" rows="5" placeholder="Write your post comment here..."
                         minlength="5"></textarea>
@@ -136,16 +129,16 @@ export function renderPost(postData) {
     }
   });
 
- 
-
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
   //
+  //
+
   deleteUserPost(container, postData);
   updateUserPost(container, postData);
-  userPostComment(container, postData);
+  userPostComment(container, postData.id)
   //
 }
