@@ -1,5 +1,5 @@
 export function userCommentInput() {
-  const commentPostForm = document.querySelector(".test");
+  const commentPostForm = document.querySelector("form#postCommentForm");
   const newFormData = new FormData(commentPostForm);
   return JSON.stringify({
     body: newFormData.get("postBody"), // Optional

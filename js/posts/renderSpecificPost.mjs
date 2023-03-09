@@ -1,5 +1,5 @@
 import { userPostComment } from "./postManagement/commentPost/commentConnection.mjs";
-const breadCrumbTitle = document.querySelector(".postTitle")
+const breadCrumbTitle = document.querySelector(".postTitle");
 
 export function renderSpecificPost(postData) {
   // console.log(postData);
@@ -40,7 +40,7 @@ export function renderSpecificPost(postData) {
   <div class="border-top my-2 p-1"></div>
 
     <div class="row p-1 m-4">
-          <form id="" class="test">
+          <form id="postCommentForm">
             <div class="mb-3">
             <textarea name="postBody" class="form-control" id="postContent" rows="5" placeholder="Write your post comment here..."
                 minlength="5"></textarea>
@@ -60,12 +60,12 @@ export function renderSpecificPost(postData) {
         });
     }
   });
-  breadCrumbTitle.innerHTML = `${postData.title}`
+  breadCrumbTitle.innerHTML = `${postData.title}`;
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
   //
-  userPostComment(container, postData);
+  userPostComment(container);
 }
