@@ -12,21 +12,18 @@ export async function filterPosts(postData, url) {
 
   postsFilter.addEventListener("change", (e) => {
     const selectValue = postsFilter.value;
+    postContainer.innerHTML = "";
 
     if (selectValue === "allPosts") {
-      postContainer.innerHTML = "";
       return renderPosts(postsArray);
     }
     if (selectValue === "newOldPosts") {
-      postContainer.innerHTML = "";
       return renderPosts(newOldFilter(postsArray));
     }
     if (selectValue === "oldNewPosts") {
-      postContainer.innerHTML = "";
       return renderPosts(oldNewFilter(postsArray));
     }
     if (selectValue === "mostLikedPosts") {
-      postContainer.innerHTML = "";
       return renderPosts(getLikedFilter(postsArray));
     }
   });

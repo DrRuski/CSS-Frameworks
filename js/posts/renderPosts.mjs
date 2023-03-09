@@ -1,5 +1,6 @@
 import { renderPost } from "./renderPost.mjs";
 import { renderSpecificPost } from "./renderSpecificPost.mjs";
+
 import { checkFollowing } from "../followUnfollowUser/checkFollowing.mjs";
 import { checkFollow } from "../followUnfollowUser/index.mjs";
 import { followButton } from "../followUnfollowUser/followButton.mjs";
