@@ -5,7 +5,7 @@ export function renderPost(postData) {
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
   container.setAttribute("id", postData.id);
-  container.classList.add("col-12", "col-md-6", "col-lg-3");
+  container.classList.add("col-12", "col-md-6", "col-lg-4");
   container.dataset.id = postData.id;
   postContainer.appendChild(container);
   container.innerHTML = `  <div class="card h-100">
