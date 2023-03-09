@@ -1,139 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/css/styles.css" />
+    <link rel="icon" href="assets/images/lazySlothLogoDone.png" />
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="https://kit.fontawesome.com/e338dcafec.js" crossorigin="anonymous"></script>
+    <script defer src="/js/posts/index.mjs" type="module"></script>
+    <title>Lazy Sloth - Home</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="styles/css/styles.css" />
-  <link rel="icon" href="assets/images/lazySlothLogoDone.png" />
-  <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-  <script src="https://kit.fontawesome.com/e338dcafec.js" crossorigin="anonymous"></script>
-  <script defer src="/js/posts/index.mjs" type="module"></script>
-  <title>Lazy Sloth - Home</title>
-</head>
+  <body class="d-flex flex-column gap-3">
+    <header>
+      <nav class="bg-white navbar navbar-expand-lg p-2 py-lg-2 nav-shadow">
+        <div class="container">
+          <div>
+            <a class="navbar-brand" href="home.html">
+              <img class="img-fluid" src="assets/images/lazySlothLogoDoneStacked.png" alt="lazy sloth logo" />
+            </a>
+          </div>
 
-<body class="d-flex flex-column gap-3">
-  <header>
-    <nav class="bg-white navbar navbar-expand-lg p-2 py-lg-2 nav-shadow">
-      <div class="container">
-        <div>
-          <a class="navbar-brand" href="home.html">
-            <img class="img-fluid" src="assets/images/lazySlothLogoDoneStacked.png" alt="lazy sloth logo" />
-          </a>
-        </div>
-
-        <button class="navbar-toggler border-dark" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="text-dark"><i class="fa-solid fa-bars"></i></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav gap-2 gap-lg-4 align-items-end align-items-lg-center">
-            <li class="nav-item">
-              <a href="home.html" class="nav-link py-1 text-dark" aria-current="page"><span
-                  class="active text-decoration-underline">Home</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="profile.html" class="nav-link py-1 text-dark">Profile</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="container d-flex flex-column gap-3">
-      <div class="row align-items-end justify-content-between">
-        <div class="col">
-          <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#createNewPost"
-            aria-controls="createNewPost" aria-expanded="false" aria-label="Toggle navigation">
-            New Post <i class="fa-solid fa-plus"></i>
+          <button
+            class="navbar-toggler border-dark"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="text-dark"><i class="fa-solid fa-bars"></i></span>
           </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav gap-2 gap-lg-4 align-items-end align-items-lg-center">
+              <li class="nav-item">
+                <a href="home.html" class="nav-link py-1 text-dark" aria-current="page"
+                  ><span class="active text-decoration-underline">Home</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="profile.html" class="nav-link py-1 text-dark">Profile</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container d-flex flex-column gap-3">
+        <div class="row align-items-end justify-content-between">
+          <div class="col">
+            <button
+              class="btn btn-primary btn-sm"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#createNewPost"
+              aria-controls="createNewPost"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              New Post <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <form id="searchForm">
+              <div class="form-floating">
+                <input
+                  required
+                  minlength="3"
+                  name="search"
+                  class="form-control"
+                  id="searchInput"
+                  type="search"
+                  placeholder="🔎 Search..."
+                  aria-label="Search"
+                />
+                <label for="search-input">🔎 Search...</label>
+              </div>
+            </form>
+          </div>
         </div>
 
-        <div class="col-6 col-lg-3">
-          <form id="searchForm">
-            <div class="form-floating">
-              <input required minlength="3" name="search" class="form-control" id="searchInput" type="search"
-                placeholder="🔎 Search..." aria-label="Search" />
-              <label for="search-input">🔎 Search...</label>
+        <div class="collapse" id="createNewPost">
+          <form class="col-lg-4" id="newPostForm">
+            <div class="form-floating mb-3">
+              <input
+                name="title"
+                type="text"
+                class="form-control"
+                id="postTitle"
+                placeholder="Post Title"
+                required
+                minlength="3"
+              />
+              <label for="postTitle">Post Title</label>
             </div>
+
+            <div class="input-group mb-3">
+              <input name="media" type="url" class="form-control" id="postImg" />
+              <label class="input-group-text" for="postImg">Image URL</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input name="hashTag" type="text" class="form-control" id="postHashtags" placeholder="Add Tags" />
+              <label for="postHashtags">Add Tags</label>
+            </div>
+
+            <div class="mb-3">
+              <textarea
+                name="postBody"
+                class="form-control"
+                id="postContent"
+                rows="5"
+                placeholder="Write your post caption here..."
+                minlength="5"
+              ></textarea>
+            </div>
+
+            <button class="btn btn-primary btn-sm">Publish <i class="fa-solid fa-up-right-from-square"></i></button>
           </form>
         </div>
-      </div>
 
-      <div class="collapse" id="createNewPost">
-        <form class="col-lg-4" id="newPostForm">
-          <div class="form-floating mb-3">
-            <input name="title" type="text" class="form-control" id="postTitle" placeholder="Post Title" required
-              minlength="3" />
-            <label for="postTitle">Post Title</label>
+        <div class="border-top"></div>
+
+        <div class="row">
+          <div class="col-6 col-lg-2">
+            <select id="postsFilter" class="form-select m-0">
+              <option value="allPosts">All Posts</option>
+              <option type="date" value="newOldPosts">New - Old</option>
+              <option type="date" value="oldNewPosts">Old - New</option>
+              <option value="mostLikedPosts">Most Liked</option>
+            </select>
           </div>
-
-          <div class="input-group mb-3">
-            <input name="media" type="url" class="form-control" id="postImg" />
-            <label class="input-group-text" for="postImg">Image URL</label>
-          </div>
-
-          <div class="form-floating mb-3">
-            <input name="hashTag" type="text" class="form-control" id="postHashtags" placeholder="Add Tags" />
-            <label for="postHashtags">Add Tags</label>
-          </div>
-
-          <div class="mb-3">
-            <textarea name="postBody" class="form-control" id="postContent" rows="5"
-              placeholder="Write your post caption here..." minlength="5"></textarea>
-          </div>
-
-          <button class="btn btn-primary btn-sm">Publish <i class="fa-solid fa-up-right-from-square"></i></button>
-        </form>
-      </div>
-
-      <div class="border-top"></div>
-
-      <div class="row">
-        <div class="col-6 col-lg-2">
-          <select id="postsFilter" class="form-select m-0">
-            <option value="allPosts">All Posts</option>
-            <option type="date" value="newOldPosts">New - Old</option>
-            <option type="date" value="oldNewPosts">Old - New</option>
-            <option value="mostLikedPosts">Most Liked</option>
-          </select>
         </div>
-      </div>
 
-      <div class="row gy-3 gx-3 write-post"></div>
+        <div class="row gy-3 gx-3 write-post"></div>
+      </section>
+    </main>
 
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img class="img-fluid" width="24" height="24" src="assets/images/lazySlothLogoDone.png" alt="" />
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Lazy Sloth, Inc</span>
+        </div>
 
-    </section>
-  </main>
-
-  <div class="container">
-    <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-          <img class="img-fluid" width="24" height="24" src="assets/images/lazySlothLogoDone.png" alt="" />
-        </a>
-        <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Lazy Sloth, Inc</span>
-      </div>
-
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3">
-          <a class="text-muted" href="#"><i class="fa-brands fa-twitter"></i></a>
-        </li>
-        <li class="ms-3">
-          <a class="text-muted" href="#"><i class="fa-brands fa-instagram"></i></a>
-        </li>
-        <li class="ms-3">
-          <a class="text-muted" href="#"><i class="fa-brands fa-square-facebook"></i></a>
-        </li>
-      </ul>
-    </footer>
-  </div>
-</body>
-
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3">
+            <a class="text-muted" href="#"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-muted" href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li class="ms-3">
+            <a class="text-muted" href="#"><i class="fa-brands fa-square-facebook"></i></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+  </body>
 </html>

@@ -1,6 +1,6 @@
 import { deleteUserPost } from "./postManagement/deletePost/deleteConnection.mjs";
 import { updateUserPost } from "./postManagement/updatePost/updateConnection.mjs";
-//
+
 export function renderPost(postData) {
   //
   const postContainer = document.querySelector(".write-post");
@@ -11,11 +11,16 @@ export function renderPost(postData) {
   postContainer.appendChild(container);
   container.innerHTML = `  <div class="card h-100">
   <div class="card-header d-flex align-items-center justify-content-between">
-    <div class="d-flex gap-2 align-items-center">
-      <img class="img-fluid card-author-img" src="assets/images/postUserIcon.png" alt="" />
-      <h6 class="m-0 card-author"></h6>
-    </div>
-    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+
+  <div class="d-flex gap-2 align-items-center">
+    <img class="img-fluid card-author-img" src="assets/images/postUserIcon.png" alt="" />
+    <h6 class="m-0 card-author"></h6>
+  </div>
+  
+<button class="btn text-primary follow-user" type="button" id="${postData.author.name}"></button>
+
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+
       <ul class="dropdown-menu">
         <li><button class="dropdown-item mb-1 py-2" data-bs-toggle="modal" data-bs-target="#updatePostModal">Update Post</button></li>
         <li><button class="dropdown-item text-warning mt-1 py-2 d-flex justify-content-between align-items-center"><span>Report Post</span><i class="fa-solid fa-triangle-exclamation"></i></i></button></li>
@@ -78,7 +83,6 @@ export function renderPost(postData) {
   <a href="specificpost.html?id=${postData.id}" class="btn btn-primary">View Post</a>
   </div>
   </div>`;
-
   postData.tags = postData.tags.filter((tag) => {
     switch (tag) {
       case "":
@@ -96,8 +100,6 @@ export function renderPost(postData) {
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
   //
-  //
   deleteUserPost(container, postData);
   updateUserPost(container, postData);
-  //
 }
