@@ -4,14 +4,18 @@ import { displayProfile } from "./displayProfile.mjs";
 import { setupPosts } from "./setupPosts.mjs";
 import { profileFormInput } from "./profileFormInput.mjs";
 import { setupUpdateProfile } from "./setupUpdateProfile.mjs";
+import { checkAllFollowers } from "../followUnfollowUser/checkAllFollowers.mjs";
+import { checkFollowers } from "../followUnfollowUser/index.mjs";
 
 export const url = `${api_Base_Url}${api_Profile}${currentProfile.name}/media`;
 const urlDisplayProfile = `${api_Base_Url}${api_Profile}${currentProfile.name}`;
 const urlUserPosts = `${api_Base_Url}${api_Profile}${currentProfile.name}/posts?_author=true`;
+export const profileFollowers = document.querySelector("#profileFollowers");
 
 setupPosts(urlUserPosts);
 displayProfile(urlDisplayProfile);
 setupUpdateProfile(url);
+checkAllFollowers(checkFollowers);
 
 // const profileImg = document.querySelector("#profileImgUrl");
 // const avatarImg = document.querySelector("#avatarImgUrl");
