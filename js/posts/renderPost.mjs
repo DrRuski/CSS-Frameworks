@@ -1,5 +1,7 @@
 import { deleteUserPost } from "./postManagement/deletePost/deleteConnection.mjs";
 import { updateUserPost } from "./postManagement/updatePost/updateConnection.mjs";
+import { getReactions } from "../react/index.mjs";
+import { api_Base_Url, api_All_Posts_EndPoint } from "../api/api_Url_Endpoints.mjs";
 
 export function renderPost(postData) {
   const postContainer = document.querySelector(".write-post");
@@ -83,7 +85,20 @@ export function renderPost(postData) {
     </li>
   </ul>
   </div>
-  <div class="d-flex justify-content-center mb-3">
+  <div class="d-flex justify-content-center mb-3 gap-3 show-reactions"></div>
+  <div class="d-flex justify-content-center mb-3 gap-3">
+  <div class="dropup">
+  <button class="btn dropdown-toggle btn-outline-primary" type="button" data-bs-toggle="dropdown" dropup>
+    React &#128512;</i>
+  </button>
+  <ul class="dropdown-menu set-dataset-id">
+    <li><button class="dropdown-item text-center react">&#128540;</button></li>
+    <li><button class="dropdown-item text-center react">&#128169;</button></li>
+    <li><button class="dropdown-item text-center react">&#128512;</button></li>
+    <li><button class="dropdown-item text-center react">&#128525;</button></li>
+    <li><button class="dropdown-item text-center react">&#128529;</button></li>
+  </ul>
+</div>
   <a href="specificpost.html?id=${postData.id}" class="btn btn-primary">View Post</a>
   </div>
   </div>`;
@@ -97,6 +112,7 @@ export function renderPost(postData) {
         });
     }
   });
+  container.querySelector(".set-dataset-id").dataset.id = postData.id;
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
@@ -105,4 +121,5 @@ export function renderPost(postData) {
 
   deleteUserPost(container, postData);
   updateUserPost(container, postData);
+  getReactions(`${api_Base_Url}${api_All_Posts_EndPoint}/${postData.id}?_reactions=true`);
 }

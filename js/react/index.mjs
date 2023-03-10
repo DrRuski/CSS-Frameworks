@@ -1,8 +1,7 @@
 import { api_Base_Url, api_All_Posts_EndPoint } from "../api/api_Url_Endpoints.mjs";
 
-const url = `${api_Base_Url}${api_All_Posts_EndPoint}?_reactions=true`;
-console.log(url);
-export async function getPosts(url) {
+// const url = `${api_Base_Url}${api_All_Posts_EndPoint}/4392?_reactions=true`;
+export async function getReactions(url) {
   try {
     const accessToken = localStorage.getItem("accessToken");
     const getData = {
@@ -20,12 +19,13 @@ export async function getPosts(url) {
     console.log(error);
   }
 }
-getPosts(url);
 function checkReactions(postData) {
-  postData.forEach((element) => {
-    if (element._count.reactions) {
-      console.log(element.reactions);
+  const container = document.querySelector(".show-reactions");
+  console.log(container);
+  postData.reactions.forEach((element) => {
+    if (element) {
+      console.log(element.symbol);
+      container.innerHTML += `<div>${element.symbol}</div>`;
     }
   });
 }
-// Work in Progress
