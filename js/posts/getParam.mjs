@@ -1,4 +1,7 @@
-import { api_Base_Url, api_Single_Post_EndPoint } from "../api/api_Url_Endpoints.mjs";
+import {
+  api_Base_Url,
+  api_Single_Post_EndPoint,
+} from "../api/api_Url_Endpoints.mjs";
 import { setupPage } from "./setupPage.mjs";
 export function getParam(specificUrl) {
   const param = new URLSearchParams(window.location.search);

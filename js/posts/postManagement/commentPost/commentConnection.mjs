@@ -12,8 +12,6 @@ export function userPostComment(container) {
       await commentPost(
         `${api_Base_Url}${api_Comment_On_Post_Endpoint}${container.id}/comment`
       );
-      // setTimeout(() => {
-      //   location.reload();
-      // }, 150);
+      location.reload();
     });
 }

@@ -1,8 +1,8 @@
 import { userPostComment } from "./postManagement/commentPost/commentConnection.mjs";
+import { renderComments } from "./postManagement/commentPost/renderComments.mjs";
 const breadCrumbTitle = document.querySelector(".postTitle");
 
 export function renderSpecificPost(postData) {
-  console.log(postData);
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");
   container.setAttribute("id", postData.id);
@@ -36,14 +36,19 @@ export function renderSpecificPost(postData) {
     </div>
 
 
-
   <div class="border-top my-2 p-1"></div>
+
+
+  <div class="row p-1 mx-4">
+    <ul class="commentTester d-flex flex-column gap-3">
+    </ul>
+  </div>
 
     <div class="row p-1 m-4">
           <form id="postCommentForm">
             <div class="mb-3">
-            <textarea name="postBody" class="form-control" id="postContent" rows="5" placeholder="Write your post comment here..."
-                minlength="5"></textarea>
+            <textarea name="postBody" class="form-control" id="postContent" rows="5" placeholder="Write your comment here..."
+                minlength="2"></textarea>
             </div>
             <button class="btn btn-primary btn-sm">Publish Comment <i class="fa-solid fa-up-right-from-square"></i></button>
           </form>
@@ -67,5 +72,6 @@ export function renderSpecificPost(postData) {
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
   //
+  renderComments(postData.comments);
   userPostComment(container);
 }
