@@ -1,5 +1,5 @@
 export function renderComments(postData) {
-  postData.forEach((e) => {
+  postData.forEach((comment) => {
     const commentContainer = document.querySelector(".commentContainer");
     const commentItem = document.createElement("li");
     commentItem.classList.add(
@@ -18,8 +18,8 @@ export function renderComments(postData) {
     </div>
     <div class="border-top my-2 p-1"></div>`;
 
-    commentItem.querySelector(".userAvatar").src = e.author.avatar;
-    commentItem.querySelector(".userName").innerText = e.author.name;
-    commentItem.querySelector(".commentBody").innerText = e.body;
+    commentItem.querySelector(".userAvatar").src = comment.author.avatar;
+    commentItem.querySelector(".userName").innerText = comment.author.name;
+    commentItem.querySelector(".commentBody").innerText = comment.body;
   });
 }
