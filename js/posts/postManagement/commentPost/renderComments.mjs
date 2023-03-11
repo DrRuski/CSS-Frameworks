@@ -1,30 +1,28 @@
 export function renderComments(postData) {
-  const test = document.querySelector(".commentTester");
-  const commentContainer = document.createElement("li");
-  commentContainer.setAttribute(
-    "id",
-    postData.map((e) => e.id)
-  );
-  commentContainer.classList.add(
-    "list-group-item",
-    "d-flex",
-    "flex-column",
-    "gap-2"
-  );
-  test.appendChild(commentContainer);
-  postData.map((e) => {
-    const commentUsername = e.author.name;
-    const commentUserAvatar = e.author.avatar;
-    const commentBody = e.body;
+  console.log(postData);
+  const commentContainer = document.querySelector(".commentContainer");
+  
+  
 
-    commentContainer.innerHTML += `  
+  commentContainer.innerHTML = `
+                                <li class="list-group-item d-flex flex-column gap-2 commentItem">
                                 <div class="d-flex align-items-center gap-3">
-                                    <img src="${commentUserAvatar}" class="img-fluid card-author-img" alt="">
-                                    <h5 class="m-0">${commentUsername}</h5>
+                                    <img src="" class="img-fluid card-author-img userAvatar" alt="">
+                                    <h5 class="m-0 userName"></h5>
                                 </div>
                                 <div>
-                                    <p class="m-0">${commentBody}</p>
+                                    <p class="m-0 commentBody"></p>
                                 </div>
-                            <div class="border-top my-2 p-1"></div>`;
-  });
+                              <div class="border-top my-2 p-1"></div>
+                              </li>`;
+  
+  
+postData.map((e) => {
+  const commentItem = document.querySelector(".commentItem");
+  console.log(commentItem);
+  commentItem.querySelector(".userAvatar").src = e.author.avatar;
+  commentItem.querySelector(".userName").innerText = e.author.name;
+  commentItem.querySelector(".commentBody").innerText = e.body;
+});
+ 
 }

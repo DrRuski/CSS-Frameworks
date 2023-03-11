@@ -41,7 +41,7 @@ export function renderSpecificPost(postData) {
 
   <div class="row p-1 mx-4 d-flex flex-column gap-2">
   <div><h2 class="text-center">Comment Section</h2></div>
-    <ul class="commentTester d-flex flex-column gap-3">
+    <ul class="commentContainer d-flex flex-column gap-3">
     </ul>
   </div>
 
