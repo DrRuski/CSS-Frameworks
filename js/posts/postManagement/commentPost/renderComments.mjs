@@ -1,6 +1,6 @@
 export function renderComments(postData) {
+  const commentContainer = document.querySelector(".commentContainer");
   postData.forEach((comment) => {
-    const commentContainer = document.querySelector(".commentContainer");
     const commentItem = document.createElement("li");
     commentItem.classList.add(
       "list-group-item",
