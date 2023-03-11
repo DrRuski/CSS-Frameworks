@@ -14,5 +14,8 @@ export function renderPosts(postData) {
     reactToPost();
   } else {
     renderSpecificPost(postData);
+    checkFollowing(checkFollow);
+    followButton();
+    reactToPost();
   }
 }

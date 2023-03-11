@@ -10,6 +10,9 @@ export function renderSpecificPost(postData) {
       <img class="img-fluid card-author-img" src="assets/images/postUserIcon.png" alt="" />
       <h6 class="m-0 card-author"></h6>
     </div>
+
+    <button class="btn text-primary follow-user" type="button" id=""></button>
+
     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>
     <ul class="dropdown-menu">
         <li><button class="dropdown-item mb-1 py-2" data-bs-toggle="modal" data-bs-target="#updatePostModal">Update Post</button></li>
@@ -54,6 +57,8 @@ export function renderSpecificPost(postData) {
         });
     }
   });
+  console.log(postData);
+  container.querySelector(".follow-user").id = postData.author.name;
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;

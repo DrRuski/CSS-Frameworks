@@ -1,6 +1,6 @@
 import { deleteUserPost } from "./postManagement/deletePost/deleteConnection.mjs";
 import { updateUserPost } from "./postManagement/updatePost/updateConnection.mjs";
-import { getReactions } from "../react/index.mjs";
+import { checkReactions } from "../react/index.mjs";
 import { api_Base_Url, api_All_Posts_EndPoint } from "../api/api_Url_Endpoints.mjs";
 
 export function renderPost(postData) {
@@ -17,7 +17,7 @@ export function renderPost(postData) {
     <h6 class="m-0 card-author"></h6>
   </div>
   
-<button class="btn text-primary follow-user" type="button" id="${postData.author.name}"></button>
+<button class="btn text-primary follow-user" type="button" id=""></button>
 
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>
       <ul class="dropdown-menu">
@@ -85,7 +85,7 @@ export function renderPost(postData) {
     </li>
   </ul>
   </div>
-  <div class="d-flex justify-content-center mb-3 gap-3 show-reactions"></div>
+  <div class="d-flex justify-content-center mb-3 gap-3"><p class="title-reactions m2"></p><p class="show-reactions m2"></p></div>
   <div class="d-flex justify-content-center mb-3 gap-3">
   <div class="dropup">
   <button class="btn dropdown-toggle btn-outline-primary" type="button" data-bs-toggle="dropdown" dropup>
@@ -112,14 +112,27 @@ export function renderPost(postData) {
         });
     }
   });
+  container.querySelector(".follow-user").id = postData.author.name;
   container.querySelector(".set-dataset-id").dataset.id = postData.id;
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
   container.querySelector(".card-img").src = postData.media;
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
+  const reactContainer = container.querySelector(".show-reactions");
+  if (postData.reactions.length > 0) {
+    checkReactions(postData, reactContainer, container);
+    // container.querySelector(".title-reactions").innerText = "Reactions";
+    // postData.reactions.forEach((element) => {
+    //   if (element) {
+    //     const reactions = element.symbol;
+    //     console.log(reactions);
+    //     container.querySelector(".show-reactions").innerText += reactions;
+    //   }
+    // });
+  }
 
+  // container.querySelector(".show-reactions").innerText = reactions;
   deleteUserPost(container, postData);
   updateUserPost(container, postData);
-  getReactions(`${api_Base_Url}${api_All_Posts_EndPoint}/${postData.id}?_reactions=true`);
 }
