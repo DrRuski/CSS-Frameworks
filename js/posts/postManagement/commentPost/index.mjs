@@ -3,7 +3,7 @@ import { commentHeader } from "./header.mjs";
 /**
  * Sends the information to the API.
  * @param {string} url Entire API url with endpoint.
- * @param {*} accessToken Users access token.
+ * @param {string} accessToken Users access token.
  * @returns Returns the response from fetch.
  */
 

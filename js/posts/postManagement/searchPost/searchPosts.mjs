@@ -2,6 +2,11 @@ import { renderPosts } from "../../renderPosts.mjs";
 import { getSearchTerms } from "./getTerms.mjs";
 import { postNotFoundError } from "./postNotFound.mjs";
 
+/**
+ * Searches for posts based on a search term entered by the user.
+ * @param {Function} postData Function that fetches post data from URL.
+ * @param {string} url The URL to retrieve post data from.
+ */
 export async function searchPosts(postData, url) {
   const postsArray = await postData(url);
   const searchForm = document.querySelector("input#searchInput");

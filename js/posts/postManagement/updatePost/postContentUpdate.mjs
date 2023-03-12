@@ -1,3 +1,6 @@
+/**
+ * @returns User input values.
+ */
 export function userContentUpdate() {
   const updateFormPost = document.querySelector("form#updatePostForm");
   const updateContent = new FormData(updateFormPost);

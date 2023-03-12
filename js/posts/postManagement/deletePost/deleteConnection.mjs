@@ -6,7 +6,7 @@ import { deletePost } from "./index.mjs";
 
 /**
  * Deletes a user created post.
- * @param {*} container Post container.
+ * @param {HTMLElement} container Post container.
  * @param {Array} postData API posts array.
  */
 

@@ -7,7 +7,7 @@ const apiEndpoint = "/comment";
 
 /**
  * Sends comment to the API.
- * @param {*} container Post container.
+ * @param {HTMLElement} container Post container.
  * @param {string} api_Base_Url API url without any specific endpoint.
  * @param {string} api_Comment_On_Post_Endpoint Specified API endpoint.
  * @param {number} container.id Post ID.

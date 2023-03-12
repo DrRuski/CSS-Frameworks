@@ -5,7 +5,14 @@ import {
   api_Base_Url,
   api_User_Login_EndPoint,
 } from "../api/api_Url_Endpoints.mjs";
-
+//
+/**
+ * Logs in a user with the given email and password.
+ * @param {string} email - The email of the user.
+ * @param {string} password - The password of the user.
+ * @returns {Object} The JSON response from the server.
+ */
+//
 async function loginUser(email, password) {
   try {
     const postData = {

@@ -1,7 +1,8 @@
 import { userCommentInput } from "./userComment.mjs";
 
 /**
- * @param {*} accessToken Logged inn users access token.
+ * Creates a header for commenting on a post.
+ * @param {string} accessToken Logged inn users access token.
  * @returns This returns API header configurations.
  */
 
