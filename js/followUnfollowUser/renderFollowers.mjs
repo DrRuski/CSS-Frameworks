@@ -1,4 +1,8 @@
 import { profileFollowers } from "../profile/index.mjs";
+/**
+ * Renders the follower provided into the container
+ * @param {Object} followers
+ */
 export function renderFollowers(followers) {
   const container = document.createElement("li");
   container.classList.add("list-group-item");

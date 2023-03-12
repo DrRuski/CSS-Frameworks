@@ -1,7 +1,9 @@
 import { userPostComment } from "./postManagement/commentPost/commentConnection.mjs";
 import { renderComments } from "./postManagement/commentPost/renderComments.mjs";
 const breadCrumbTitle = document.querySelector(".postTitle");
-
+/**
+ * @param {Object} postData - Takes the data provided and renders a specific post
+ */
 export function renderSpecificPost(postData) {
   const postContainer = document.querySelector(".write-post");
   const container = document.createElement("div");

@@ -1,4 +1,8 @@
 import { checkReactions } from "./checkReactions.mjs";
+/**
+ * Takes a url and checks which reactions a specific post has.
+ * @param {string} url
+ */
 export async function getReactions(url) {
   try {
     const accessToken = localStorage.getItem("accessToken");
