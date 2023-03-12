@@ -1,3 +1,8 @@
+/**
+ * 
+ * @returns Users input information.
+ */
+
 export function userPostInput() {
   const newPostForm = document.querySelector("form#newPostForm");
   const newFormData = new FormData(newPostForm);
