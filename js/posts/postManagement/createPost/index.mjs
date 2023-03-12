@@ -1,5 +1,10 @@
 import { createNewPostSetup } from "./createNewPostSetup.mjs";
 //
+/**
+ * 
+ * @param {string} url Entire API url with endpoint.
+ * @returns Returns the response from fetch.
+ */
 //
 export async function publishPost(url) {
   try {

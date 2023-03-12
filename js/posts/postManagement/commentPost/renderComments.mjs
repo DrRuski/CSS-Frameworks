@@ -1,3 +1,8 @@
+/**
+ * Renders a comment for every index item.
+ * @param {Array} postData API Comments array.
+ */
+
 export function renderComments(postData) {
   const commentContainer = document.querySelector(".commentContainer");
   postData.forEach((comment) => {

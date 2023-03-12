@@ -1,3 +1,7 @@
+/**
+ * On search term not found the provided message will display on screen.
+ * @param {HTMLElement} container Error message container.
+ */
 export function postNotFoundError(container) {
   //
   container.innerHTML = `<div class="container vh-100">

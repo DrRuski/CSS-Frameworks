@@ -1,4 +1,11 @@
 import { userPostInput } from "./userPostInput.mjs";
+
+/**
+ * Creates a header for creating a post.
+ * @param {string} accessToken Logged inn users access token.
+ * @returns This returns API header configurations.
+ */
+
 export function createNewPostSetup(accessToken) {
   return {
     method: "POST",

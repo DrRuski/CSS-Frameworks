@@ -5,7 +5,15 @@ import {
   api_Base_Url,
   api_User_Registration_EndPoint,
 } from "../api/api_Url_Endpoints.mjs";
-
+//
+/**
+ * Registers a new user with the provided email, name, and password.
+ * @param {string} email - The user's email address.
+ * @param {string} name - The user's name.
+ * @param {string} password - The user's password.
+ * @returns {Promise} A Promise that resolves with the response data if the registration was successful, or rejects with an error otherwise.
+ */
+//
 async function registerUser(email, name, password) {
   try {
     const postData = {

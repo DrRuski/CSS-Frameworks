@@ -4,6 +4,12 @@ import {
 } from "../../../api/api_Url_Endpoints.mjs";
 import { deletePost } from "./index.mjs";
 
+/**
+ * Deletes a user created post.
+ * @param {HTMLElement} container Post container.
+ * @param {Array} postData API posts array.
+ */
+
 export function deleteUserPost(container, postData) {
   container
     .querySelector("button#deletePostBtn")
