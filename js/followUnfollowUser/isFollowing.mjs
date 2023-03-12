@@ -3,7 +3,10 @@ import { checkFollow } from "./index.mjs";
 import { getUsers } from "./getUsers.mjs";
 import { viewFollowing } from "./viewFollowing.mjs";
 import { updateFollowButton } from "./updateFollowButton.mjs";
-
+/**
+ * Filters all posts (users) with current followers(users)
+ * @param {Object} follower
+ */
 export function isFollowing(follower) {
   function getData() {
     const following = viewFollowing(follower);

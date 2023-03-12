@@ -1,3 +1,8 @@
+/**
+ * Takes url from reactToPost and sends a put request to server
+ * @param {string} url
+ * Adds a specific reaction to a specific post ID using the url provided
+ */
 export async function addReactionToPost(url) {
   try {
     const accessToken = localStorage.getItem("accessToken");
@@ -9,6 +14,7 @@ export async function addReactionToPost(url) {
     };
     const response = await fetch(url, getData);
     const postData = await response.json();
+    location.reload();
   } catch (error) {
     console.log(error);
   }

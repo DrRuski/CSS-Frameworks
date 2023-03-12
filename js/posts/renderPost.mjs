@@ -2,7 +2,9 @@ import { deleteUserPost } from "./postManagement/deletePost/deleteConnection.mjs
 import { updateUserPost } from "./postManagement/updatePost/updateConnection.mjs";
 import { checkReactions } from "../react/checkReactions.mjs";
 import { api_Base_Url, api_All_Posts_EndPoint } from "../api/api_Url_Endpoints.mjs";
-
+/**
+ * @param {Object} postData - takes the url renderPosts and renders the page.
+ */
 export function renderPost(postData) {
   //
   const postContainer = document.querySelector(".write-post");
@@ -63,9 +65,6 @@ export function renderPost(postData) {
         </div>
       </div>
   </div>
-
-
-
   <div class="card-body d-flex flex-column gap-2 p-0">
   <div>
   <img class="img-fluid card-img " src="" alt=""/>
@@ -116,7 +115,7 @@ export function renderPost(postData) {
   container.querySelector(".card-title").innerText = postData.title;
   container.querySelector(".card-text").innerText = postData.body;
   const reactContainer = container.querySelector(".show-reactions");
-  if (postData.reactions.length > 0) {
+  if (postData.reactions && postData.reactions.length > 0) {
     checkReactions(postData, reactContainer, container);
   }
   deleteUserPost(container, postData);

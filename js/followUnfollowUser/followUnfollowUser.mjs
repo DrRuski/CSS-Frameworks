@@ -1,6 +1,9 @@
 import { checkFollowing } from "./checkFollowing.mjs";
 import { checkFollow } from "./index.mjs";
-
+/**
+ * Takes the url and sends a request to the server to follow or unfollow the user from the url
+ * @param {string} url
+ */
 export async function followUnfollowUser(url) {
   try {
     const accessToken = localStorage.getItem("accessToken");

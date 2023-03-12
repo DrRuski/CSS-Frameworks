@@ -1,6 +1,9 @@
 import { isUserFollowed } from "./isUserFollowed.mjs";
 import { loggedInUser } from "./index.mjs";
-
+/**
+ * Updates follow/unfollow button taking the url provided which checks wether a user is followed or not.
+ * @param {string} currentFollowing
+ */
 export function updateFollowButton(currentFollowing) {
   const btn = document.querySelectorAll(".follow-user");
   const btnVariable = btn.forEach((e) => {
