@@ -9,7 +9,6 @@ setupPage(`${api_Base_Url}${api_All_Posts_EndPoint}?_author=true&_reactions=true
 //
 searchPosts(getPosts, `${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`);
 //
-
 filterPosts(getPosts, `${api_Base_Url}${api_All_Posts_EndPoint}?_author=true`);
 //
 document.querySelector("form#newPostForm").addEventListener("submit", async (e) => {
