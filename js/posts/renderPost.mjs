@@ -1,6 +1,6 @@
 import { deleteUserPost } from "./postManagement/deletePost/deleteConnection.mjs";
 import { updateUserPost } from "./postManagement/updatePost/updateConnection.mjs";
-import { checkReactions } from "../react/index.mjs";
+import { checkReactions } from "../react/checkReactions.mjs";
 import { api_Base_Url, api_All_Posts_EndPoint } from "../api/api_Url_Endpoints.mjs";
 
 export function renderPost(postData) {
@@ -85,7 +85,7 @@ export function renderPost(postData) {
     </li>
   </ul>
   </div>
-  <div class="d-flex justify-content-center mb-3 gap-3"><p class="title-reactions m2"></p><p class="show-reactions m2"></p></div>
+  <div class="d-flex justify-content-center mb-3 gap-3"><div class="title-reactions"></div><div class="show-reactions"></div></div>
   <div class="d-flex justify-content-center mb-3 gap-3">
   <div class="dropup">
   <button class="btn dropdown-toggle btn-outline-primary" type="button" data-bs-toggle="dropdown" dropup>
@@ -122,14 +122,6 @@ export function renderPost(postData) {
   const reactContainer = container.querySelector(".show-reactions");
   if (postData.reactions.length > 0) {
     checkReactions(postData, reactContainer, container);
-    // container.querySelector(".title-reactions").innerText = "Reactions";
-    // postData.reactions.forEach((element) => {
-    //   if (element) {
-    //     const reactions = element.symbol;
-    //     console.log(reactions);
-    //     container.querySelector(".show-reactions").innerText += reactions;
-    //   }
-    // });
   }
 
   // container.querySelector(".show-reactions").innerText = reactions;

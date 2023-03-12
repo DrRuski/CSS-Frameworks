@@ -57,7 +57,6 @@ export function renderSpecificPost(postData) {
         });
     }
   });
-  console.log(postData);
   container.querySelector(".follow-user").id = postData.author.name;
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
