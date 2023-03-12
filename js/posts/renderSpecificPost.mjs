@@ -10,10 +10,11 @@ export function renderSpecificPost(postData) {
   postContainer.appendChild(container);
   container.innerHTML = `  <div class="card h-100">
     <div class="card-header d-flex align-items-center justify-content-between">
-      <div class="d-flex gap-2 align-items-center">
-        <img class="img-fluid card-author-img" src="assets/images/postUserIcon.png" alt="" />
-        <h6 class="m-0 card-author"></h6>
-      </div>
+    <div class="d-flex gap-2 align-items-center">
+      <img class="img-fluid card-author-img" src="assets/images/postUserIcon.png" alt="" />
+      <h6 class="m-0 card-author"></h6>
+    </div>
+    <button class="btn text-primary follow-user" type="button" id=""></button>
     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>
     <ul class="dropdown-menu">
         <li><button class="dropdown-item mb-1 py-2" data-bs-toggle="modal" data-bs-target="#updatePostModal">Update Post</button></li>
@@ -66,6 +67,7 @@ export function renderSpecificPost(postData) {
         });
     }
   });
+  container.querySelector(".follow-user").id = postData.author.name;
   breadCrumbTitle.innerHTML = `${postData.title}`;
   container.querySelector(".card-author-img").src = postData.author.avatar;
   container.querySelector(".card-author").innerText = postData.author.name;
