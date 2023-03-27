@@ -37,7 +37,7 @@ async function registerUser(email, name, password) {
       buttonAcceptedStyle();
       setTimeout(() => {
         window.location.pathname = "index.html";
-      }, 2000);
+      }, 1000);
     }
 
     return json;
@@ -47,6 +47,7 @@ async function registerUser(email, name, password) {
 }
 
 submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   const form = document.getElementById("form");
   const formData = new FormData(form);
   const email = formData.get("useremail");

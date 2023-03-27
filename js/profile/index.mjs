@@ -6,7 +6,9 @@ import { profileFormInput } from "./profileFormInput.mjs";
 import { setupUpdateProfile } from "./setupUpdateProfile.mjs";
 import { checkAllFollowers } from "../followUnfollowUser/checkAllFollowers.mjs";
 import { checkFollowers } from "../followUnfollowUser/index.mjs";
-
+import { logoutUser } from "../../logout-user/logout-user.js";
+//
+const logoutBtn = document.querySelector(".logoutBtn");
 export const url = `${api_Base_Url}${api_Profile}${currentProfile.name}/media`;
 const urlDisplayProfile = `${api_Base_Url}${api_Profile}${currentProfile.name}`;
 const urlUserPosts = `${api_Base_Url}${api_Profile}${currentProfile.name}/posts?_author=true`;
@@ -25,3 +27,4 @@ setupPosts(urlUserPosts);
 displayProfile(urlDisplayProfile);
 setupUpdateProfile(url);
 checkAllFollowers(checkFollowers);
+logoutUser(logoutBtn);
