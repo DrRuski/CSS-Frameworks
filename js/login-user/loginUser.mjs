@@ -1,5 +1,5 @@
 import { submitBtn } from "./loginForm.mjs";
-import { buttonAcceptedStyle } from "./loginButtonStyle.mjs";
+import { buttonAcceptedStyle, buttonErrorStyle } from "./loginButtonStyle.mjs";
 
 import {
   api_Base_Url,
@@ -43,6 +43,7 @@ async function loginUser(email, password) {
 
     if (!response.ok) {
       console.log(json.errors);
+      buttonErrorStyle();
     } else {
       buttonAcceptedStyle();
       setTimeout(() => {
